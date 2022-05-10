@@ -24,7 +24,7 @@ import { AddUsersComponent } from './users/add-users.component';
     NbButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'users', component: AddUsersComponent },
+      { path: 'add-users', component: AddUsersComponent },
     ])
   ],
   providers: [],

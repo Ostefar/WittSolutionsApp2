@@ -1,24 +1,42 @@
 <div>
-  <label>First name</label>
-  <input />
+  <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
 
-  <label>Last name</label>
-  <input />
+    <div class="col-md-2">
+      <label for="firstname">First name</label>
+      <input id="firstName" type="text" formControlName="firstName">
+    </div>
 
-  <label>Username</label>
-  <input />
+    <div class="col-md-2">
+      <label for="lastname">Last name</label>
+      <input id="lastName" type="text" formControlName="lastName">
+    </div>
 
-  <label>Password</label>
-  <input />
+    <div class="col-md-2">
+      <label for="username">Username</label>
+      <input id="userName" type="text" formControlName="userName">
+    </div>
 
-  <label>Phone</label>
-  <input />
+    <div class="col-md-2">
+      <label for="password">Password</label>
+      <input id="password" type="text" formControlName="password">
+    </div>
 
-  <label>Email</label>
-  <input />
+    <div class="col-md-2">
+      <label for="phone">Phone</label>
+      <input id="phone" type="text" formControlName="phone">
+    </div>
 
-  <label>Address id</label>
-  <input />
+    <div class="col-md-2">
+      <label for="email">Email</label>
+      <input id="email" type="text" formControlName="email">
+    </div>
 
+    <div class="col-md-2">
+      <label for="addressId">Address id</label>
+      <input id="addressId" type="text" formControlName="addressId">
+    </div>
+
+    <button type="submit" [disabled]="!addUserForm.valid">Submit</button>
+  </form>
 </div>
 

@@ -32,6 +32,6 @@ export class AddUsersComponent implements OnInit
 
   onSubmit()
   {
-    console.warn(this.addUserForm.value);
+    console.log(this.addUserForm.value);
   }
 }

@@ -15,5 +15,7 @@ namespace WittSolutionsApp2.Data
         {
             base.OnModelCreating(builder);
         }
+
+        public DbSet<Employee>? Employee { get; set; }
     }
 }

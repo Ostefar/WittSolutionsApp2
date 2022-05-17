@@ -9,6 +9,14 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { NbButtonModule, NbTabsetModule } from '@nebular/theme';
 import { AddUsersComponent } from './users/add-users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button'
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +31,13 @@ import { AddUsersComponent } from './users/add-users.component';
     FormsModule,
     NbButtonModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    
     NbTabsetModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },

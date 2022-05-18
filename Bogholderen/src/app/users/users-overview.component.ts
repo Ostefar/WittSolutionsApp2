@@ -33,8 +33,13 @@ export class UsersOverviewComponent implements OnInit {
     })
   }
 
-  DeleteUser(id: any)
+  DeleteUser(id: number)
   {
+    debugger
+    this.userService.delete(id).subscribe(res => {
+      this.users = this.users.filter(item => item.id !== id);
+      console.log('User deleted successfully!');
+    })
   }
 
   UpdateUser()

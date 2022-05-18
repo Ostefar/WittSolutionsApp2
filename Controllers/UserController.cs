@@ -54,5 +54,13 @@ namespace WittSolutionsApp2.Controllers
                 return BadRequest(payload);
             }
         }
+        [HttpDelete]
+        [Route("DeleteUser")]
+        public void DeleteUser(int id)
+        {
+                _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(user => user.Id == id));
+                _dbContext.SaveChanges();
+            
+        }
     }
 }

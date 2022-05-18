@@ -19,7 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,10 +31,12 @@
 
   <ItemGroup>
     <None Remove="Bogholderen\src\app\service\user.service.ts" />
+    <None Remove="Bogholderen\src\app\users\User.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="Bogholderen\src\app\service\user.service.ts" />
+    <TypeScriptCompile Include="Bogholderen\src\app\users\User.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

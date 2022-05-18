@@ -1,16 +1,20 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { User } from "../users/User";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  readonly APIUrl = "http://localhost:44459/add-users";
+  readonly APIUrl = "http://localhost:44459/api";
 
   constructor(private http: HttpClient) { }
 
-  addUser(val: any) {
-    return this.http.post(this.APIUrl + '/User', val);
+  post(payload: User) {
+    return this.http.post<User>(
+      this.APIUrl + '/CreateUsers',
+      payload
+    );
   }
   /*getStudentList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/Student');

@@ -44,6 +44,7 @@ import { UsersOverviewComponent } from './users/users-overview.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'users-overview', component: UsersOverviewComponent },
+      { path: 'add-users', component: AddUsersComponent },
     ])
   ],
   providers: [],

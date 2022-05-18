@@ -28,9 +28,14 @@ namespace WittSolutionsApp2.Controllers
                   .Select(group =>
                         new User
                         {
-                            Id = group.FirstOrDefault().Id,
                             FirstName = group.FirstOrDefault().FirstName,
-                            LastName = group.FirstOrDefault().LastName
+                            LastName = group.FirstOrDefault().LastName,
+                            UserName = group.FirstOrDefault().UserName,
+                            Password = group.FirstOrDefault().Password,
+                            Phone = group.FirstOrDefault().Phone,
+                            Email = group.FirstOrDefault().Email,
+                            Address_id = group.FirstOrDefault().Address_id,
+
                         })
                   .OrderBy(group => group.FirstName);
         }

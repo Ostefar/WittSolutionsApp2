@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { catchError } from 'rxjs/operators';
 import { User } from "../users/User";
 
 @Injectable({
@@ -10,6 +12,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  getAll(): Observable<any> {
+    return this.http.get(this.APIUrl + '/ViewUsers')
+  }
+
   post(payload: User) {
     debugger
     return this.http.post<User>(
@@ -17,6 +23,11 @@ export class UserService {
       payload
     );
   }
+
+  delete(id: number) {
+    return this.http.delete(this.APIUrl + '/DeleteUser' + id)
+  }
+
   /*getStudentList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/Student');
   }

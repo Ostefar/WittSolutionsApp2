@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
+import { UsersOverviewComponent } from './users/users-overview.component';
 
 
 
@@ -23,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button'
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    AddUsersComponent
+    AddUsersComponent,
+    UsersOverviewComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,7 +43,7 @@ import { MatButtonModule } from '@angular/material/button'
     NbTabsetModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'add-users', component: AddUsersComponent },
+      { path: 'users-overview', component: UsersOverviewComponent },
     ])
   ],
   providers: [],

@@ -2,12 +2,13 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
 using WittSolutionsApp2.Data;
+using WittSolutionsApp2.DTO_s.User;
 using WittSolutionsApp2.Models;
 
 namespace WittSolutionsApp2.Controllers
 {
+    [Route("[controller]")]
     [ApiController]
-    [Route("api/[controller]")]
     public class UserController : Controller
     {
 
@@ -36,27 +37,17 @@ namespace WittSolutionsApp2.Controllers
 
         [HttpPost]
         [Route("CreateUsers")]
-        public JsonResult Post(User objUser)
+        public async Task<IActionResult> Post(User payload)
         {
-            string query = @"Insert into dbo.Student values
-                ('" + objUser.FirstName + "','" + objUser.LastName + "')";
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("ConnStr");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            if (payload is not null)
             {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-
-                    myReader.Close();
-                    myCon.Close();
-                }
+                _dbContext.Users.Add(payload);
+                await _dbContext.SaveChangesAsync();
+                return Ok(payload);
             }
-
-            return new JsonResult("Added Successfully");
+            else {
+                return BadRequest(payload);
+            }
         }
     }
 }

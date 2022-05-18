@@ -22,14 +22,13 @@ export class AddUsersComponent implements OnInit
   }
   private createForm() { 
   this.addUserForm = this.fb.group({
-    Id: new FormControl(''),
     FirstName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
     LastName: new FormControl(''),
     UserName: new FormControl(''),
     Password: new FormControl(''),
-    Phone: new FormControl(''),
+    Phone: new FormControl(),
     Email: new FormControl(''),
-    AddressId: new FormControl(''),
+    AddressId: new FormControl(),
   });
   }
 
@@ -42,7 +41,6 @@ export class AddUsersComponent implements OnInit
 
   onSubmit()
   {
-    debugger
     this.userService.post(this.addUserForm.value)
       .subscribe(
         (data) => {
@@ -51,7 +49,7 @@ export class AddUsersComponent implements OnInit
         (error: HttpErrorResponse) => {
           console.log(error);
         }
-      );
+    );
   }
 }
   

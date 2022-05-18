@@ -6,11 +6,12 @@ import { User } from "../users/User";
   providedIn: 'root'
 })
 export class UserService {
-  readonly APIUrl = "http://localhost:44459/api";
+  readonly APIUrl = "user";
 
   constructor(private http: HttpClient) { }
 
   post(payload: User) {
+    debugger
     return this.http.post<User>(
       this.APIUrl + '/CreateUsers',
       payload

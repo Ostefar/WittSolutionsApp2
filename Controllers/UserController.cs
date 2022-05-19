@@ -56,10 +56,10 @@ namespace WittSolutionsApp2.Controllers
             }
         }
         [HttpDelete]
-        [Route("DeleteUser")]
+        [Route("DeleteUser{id}")]
         public void DeleteUser(int id)
         {
-                _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(user => user.Id == id));
+                _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(x => x.Id == id));
                 _dbContext.SaveChanges();
             
         }

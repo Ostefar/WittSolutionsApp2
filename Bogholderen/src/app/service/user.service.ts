@@ -25,6 +25,7 @@ export class UserService {
   }
 
   delete(id: number) {
+    console.log('i got to service')
     return this.http.delete(this.APIUrl + '/DeleteUser' + id)
   }
 

@@ -5,6 +5,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserService } from '../service/user.service';
 import { User } from './User';
 import { Router } from '@angular/router';
+import { NotificationService } from '../service/notification-service';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,7 @@ export class UsersOverviewComponent implements OnInit {
   //to hold users info from db
   users: User[] = [];
 
-  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private router: Router) {
+  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private router: Router, private notifyService: NotificationService) {
 
   }
 
@@ -29,20 +30,41 @@ export class UsersOverviewComponent implements OnInit {
   GetAllUsers() {
     this.userService.getAll().subscribe((data: User[]) => {
       this.users = data;
-      console.log(this.users);
+      //console.log(this.users);
     })
   }
 
   DeleteUser(id: number)
   {
     this.userService.delete(id).subscribe(res => {
-      this.users = this.users.filter(item => item.id !== id);
+      this.showToasterSuccess();
       console.log('User deleted successfully!');
     })
+    this.reload();
   }
 
   UpdateUser()
   {
   }
+
+  reload() {
+    setTimeout(function () { location.reload(); }, 2000);
+  }
+
+  showToasterSuccess() {
+    this.notifyService.showSuccess("User deleted", "Success!")
+  }
+
+  showToasterError() {
+    this.notifyService.showError("Something went wrong", "Error!")
+  }
+
+  /*showToasterInfo() {
+    this.notifyService.showInfo("This is info", "New user")
+  }
+
+  showToasterWarning() {
+    this.notifyService.showWarning("This is warning", "New user")
+  }*/
 }
 

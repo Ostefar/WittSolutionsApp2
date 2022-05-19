@@ -59,7 +59,7 @@ export class AddUsersComponent implements OnInit
     } else {
       this.showToasterError();
     }
-    //this.reload();
+    this.reload();
   }
 
   reload() {
@@ -71,7 +71,7 @@ export class AddUsersComponent implements OnInit
   }
 
   showToasterError() {
-    this.notifyService.showError("Something is wrong", "Error!")
+    this.notifyService.showError("Something went wrong", "Error!")
   }
 
   /*showToasterInfo() {

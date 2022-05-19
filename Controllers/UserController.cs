@@ -5,7 +5,7 @@ using WittSolutionsApp2.Models;
 
 namespace WittSolutionsApp2.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
     {

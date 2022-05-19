@@ -10,9 +10,9 @@ import { User } from "../users/User";
 })
 export class UserService {
   // Api url for localhost
-  //readonly APIUrl = "user";
+  readonly APIUrl = "user";
   //api for azure hosting
-  private readonly APIUrl: string = environment.baseApiUrl;
+  //private readonly APIUrl: string = environment.baseApiUrl;
 
 
   constructor(private http: HttpClient) { }

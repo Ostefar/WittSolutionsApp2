@@ -27,6 +27,7 @@
 
 # misc
 .angular/cache/
+.history/
 /.sass-cache
 /connect.lock
 /coverage

@@ -8,8 +8,10 @@ import { User } from "../users/User";
   providedIn: 'root'
 })
 export class UserService {
+  // Api url for localhost
   //readonly APIUrl = "user";
-  readonly APIUrl = "https://wittsolutionsapp2.azurewebsites.net/api/user";
+  //api for azure hosting
+  readonly APIUrl = "user";
 
   constructor(private http: HttpClient) { }
 

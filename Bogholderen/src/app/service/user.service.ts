@@ -8,7 +8,8 @@ import { User } from "../users/User";
   providedIn: 'root'
 })
 export class UserService {
-  readonly APIUrl = "user";
+  //readonly APIUrl = "user";
+  readonly APIUrl = "https://myapp.azurewebsites.net/user";
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +26,6 @@ export class UserService {
   }
 
   delete(id: number) {
-    console.log('i got to service')
     return this.http.delete(this.APIUrl + '/DeleteUser' + id)
   }
 

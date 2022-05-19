@@ -8,7 +8,7 @@ const PROXY_CONFIG = [
     context: [
       "/user",
    ],
-    target: 'https://wittsolutionsapp2.azurewebsites.net/',
+    target: target,
     secure: false,
     headers: {
       Connection: 'Keep-Alive'

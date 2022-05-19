@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { catchError } from 'rxjs/operators';
+import { environment } from "../../environments/environment";
 import { User } from "../users/User";
 
 @Injectable({
@@ -11,7 +12,8 @@ export class UserService {
   // Api url for localhost
   //readonly APIUrl = "user";
   //api for azure hosting
-  readonly APIUrl = "https://wittsolutionsapp2.azurewebsites.net/api/user";
+  private readonly APIUrl: string = environment.baseApiUrl;
+
 
   constructor(private http: HttpClient) { }
 

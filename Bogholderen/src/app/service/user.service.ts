@@ -10,15 +10,15 @@ import { User } from "../users/User";
 })
 export class UserService {
   // Api url for localhost
-  readonly APIUrl = "user";
+  //readonly APIUrl = "user";
   //api for azure hosting
-  //private readonly APIUrl: string = environment.baseApiUrl;
+  private readonly APIUrl: "https://wittsolutionsapp2.azurewebsites.net/api/user";
 
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get(this.APIUrl + '/ViewUsers') // skal nok være '/user/ViewUsers'
+    return this.http.get(this.APIUrl + '/ViewUsers')
   }
 
   post(payload: User) {

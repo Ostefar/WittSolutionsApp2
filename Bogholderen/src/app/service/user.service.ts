@@ -9,7 +9,7 @@ import { User } from "../users/User";
 })
 export class UserService {
   //readonly APIUrl = "user";
-  readonly APIUrl = "https://myapp.azurewebsites.net/user";
+  readonly APIUrl = "https://wittsolutionsapp2.azurewebsites.net/user";
 
   constructor(private http: HttpClient) { }
 

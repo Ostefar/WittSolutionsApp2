@@ -11,7 +11,7 @@ export class UserService {
   // Api url for localhost
   //readonly APIUrl = "user";
   //api for azure hosting
-  readonly APIUrl = "user";
+  readonly APIUrl = "https://wittsolutionsapp2.azurewebsites.net/api/user";
 
   constructor(private http: HttpClient) { }
 

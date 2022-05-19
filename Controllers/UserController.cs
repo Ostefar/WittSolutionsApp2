@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using System.Data;
 using WittSolutionsApp2.Data;
-using WittSolutionsApp2.DTO_s.User;
 using WittSolutionsApp2.Models;
 
 namespace WittSolutionsApp2.Controllers

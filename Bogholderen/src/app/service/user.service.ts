@@ -18,7 +18,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get(this.APIUrl + '/ViewUsers')
+    return this.http.get(this.APIUrl + '/ViewUsers') // skal nok være '/user/ViewUsers'
   }
 
   post(payload: User) {

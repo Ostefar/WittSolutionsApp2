@@ -30,11 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Bogholderen\src\app\service\notification-service.ts" />
     <None Remove="Bogholderen\src\app\service\user.service.ts" />
     <None Remove="Bogholderen\src\app\users\User.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="Bogholderen\src\app\service\notification-service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\user.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\users\User.ts" />
   </ItemGroup>

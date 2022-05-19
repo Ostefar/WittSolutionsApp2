@@ -28,6 +28,7 @@ namespace WittSolutionsApp2.Controllers
                   .Select(group =>
                         new User
                         {
+                            Id = group.Key,
                             FirstName = group.FirstOrDefault().FirstName,
                             LastName = group.FirstOrDefault().LastName,
                             UserName = group.FirstOrDefault().UserName,

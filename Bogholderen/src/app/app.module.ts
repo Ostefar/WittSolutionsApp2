@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { UsersOverviewComponent } from './users/users-overview.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -38,6 +39,11 @@ import { UsersOverviewComponent } from './users/users-overview.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
     BrowserAnimationsModule,
     
     NbTabsetModule,

@@ -30,6 +30,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "ng2-charts": "^3.0.11",
+    "ngx-toastr": "^14.3.0",
     "oidc-client": "^1.11.5",
     "popper.js": "^1.16.0",
     "run-script-os": "^1.1.6",

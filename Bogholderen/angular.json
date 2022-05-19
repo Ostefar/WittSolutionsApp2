@@ -127,6 +127,11 @@
             }
           }
         }
+      },
+      "cors": {
+        "allowedOrigins": [
+          "wittsolutionsapp2.azurewebsites.net"
+        ]
       }
     }
   },

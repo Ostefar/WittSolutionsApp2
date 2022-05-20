@@ -21,11 +21,9 @@ export class UserService {
     return this.http.get(this.APIUrl + '/ViewUsers')
   }
 
-  post(payload: User) {
+  create(payload: User) {
     debugger
-    return this.http.post<User>(
-      this.APIUrl + '/CreateUsers',
-      payload
+    return this.http.post<User>(this.APIUrl + '/CreateUsers', payload
     );
   }
 
@@ -33,27 +31,13 @@ export class UserService {
     return this.http.delete(this.APIUrl + '/DeleteUser' + id)
   }
 
-  /*getStudentList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/Student');
+
+  getById(id: number): Observable<any> {
+    return this.http.get<User>(this.APIUrl + '/GetUserBy' + id)
   }
-  addStudent(val: any) {
-    return this.http.post(this.APIUrl + '/Student', val);
+
+  update(id: number, payload: User) {
+    return this.http.put<User>(this.APIUrl + '/UpdateUser' + id, payload);
+
   }
-  updateStudent(val: any) {
-    return this.http.put(this.APIUrl + '/Student', val);
-  }
-  deleteStudent(id: any) {
-    return this.http.delete(this.APIUrl + '/Student/' + id);
-  }
-  getDepartmentList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/Department');
-  }
-  addDepartment(val: any) {
-    return this.http.post(this.APIUrl + '/Department', val);
-  }
-  updateDepartment(val: any) {
-    return this.http.put(this.APIUrl + '/Department', val);
-  }
-  deleteDepartment(id: any) {
-    return this.http.delete(this.APIUrl + '/Department/' + id);*/
 }

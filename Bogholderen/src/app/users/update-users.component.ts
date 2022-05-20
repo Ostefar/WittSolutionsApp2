@@ -2,28 +2,30 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { NotificationService } from '../service/notification-service';
 import { UserService } from '../service/user.service';
 import { User } from './User';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './add-users.component.html',
+  templateUrl: './update-users.component.html',
   styleUrls: ['./../../styles.css']
 })
-export class AddUsersComponent implements OnInit
+export class UpdateUsersComponent implements OnInit
 {
-  users: User[] = [];
-  userList: any = [];
-  addUserForm!: FormGroup;
+  id!: number;
+  user!: User;
+  updateUserForm!: FormGroup;
 
 
-  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private router: Router) {
+  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router) {
    
   }
-  private createForm() { 
-  this.addUserForm = this.fb.group({
+  private updateForm() { 
+    this.updateUserForm = this.fb.group({
+      Id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]),
     FirstName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     LastName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     UserName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
@@ -37,19 +39,42 @@ export class AddUsersComponent implements OnInit
 
   ngOnInit(): void
   {
-    this.createForm();
+    this.updateForm();
+    this.getById()
+    
+  }
+
+  getById() {
+    this.id = this.route.snapshot.params['id'];
+
+    this.userService.getById(this.id).subscribe((data: User) => {
+      this.user = data;
+      this.updateUserForm.setValue({
+        Id: this.user.id,
+        FirstName: this.user.firstName,
+        LastName: this.user.lastName,
+        UserName: this.user.userName,
+        Password: this.user.password,
+        Phone: this.user.phone,
+        Email: this.user.email,
+        Address_id: this.user.address_id,
+        
+      });
+    });
+     
   }
 
 
   onSubmit()
   {
-    if (this.addUserForm.valid) {
-      this.userService.create(this.addUserForm.value)
+    debugger
+    if (this.updateUserForm.valid) {
+      this.userService.update(this.id, this.updateUserForm.value)
         .subscribe(
           (data) => {
             this.showToasterSuccess();
             console.log('Form submitted successfully');
-            console.log(this.addUserForm.value)
+            console.log(this.updateUserForm.value)
           },
           (error: HttpErrorResponse) => {
             this.showToasterError();
@@ -64,38 +89,18 @@ export class AddUsersComponent implements OnInit
   }
 
   reload() {
-    setTimeout(() => { this.router.navigateByUrl('/users-overview'); }, 2000);
+    setTimeout( () => { this.router.navigateByUrl('/users-overview'); }, 2000);
   }
 
   showToasterSuccess() {
-    this.notifyService.showSuccess("New user created", "Success!")
+    this.notifyService.showSuccess("User updated", "Success!")
   }
 
   showToasterError() {
     this.notifyService.showError("Something went wrong", "Error!")
   }
 
-  /*showToasterInfo() {
-    this.notifyService.showInfo("This is info", "New user")
-  }
-
-  showToasterWarning() {
-    this.notifyService.showWarning("This is warning", "New user")
-  }*/
 }
 
 
-  
-
-  /* get() {
-    this.studentService.get()
-      .subscribe({
-        next: (data) => {
-          this.students = data;
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      })
-  } */
-
+ 

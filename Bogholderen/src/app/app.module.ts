@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { UsersOverviewComponent } from './users/users-overview.component';
 import { ToastrModule } from 'ngx-toastr';
+import { UpdateUsersComponent } from './users/update-users.component';
 
 
 
@@ -27,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     AddUsersComponent,
     UsersOverviewComponent,
+    UpdateUsersComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -51,6 +53,7 @@ import { ToastrModule } from 'ngx-toastr';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'users-overview', component: UsersOverviewComponent },
       { path: 'add-users', component: AddUsersComponent },
+      { path: 'update-users/:id', component: UpdateUsersComponent },
     ])
   ],
   providers: [],

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using WittSolutionsApp2.Data;
 using WittSolutionsApp2.Models;
@@ -38,6 +39,16 @@ namespace WittSolutionsApp2.Controllers
                         })
                   .OrderBy(group => group.FirstName);
         }
+        [HttpGet]
+        [Route("GetUserBy{id}")]
+        public IActionResult GetById(int id)
+        {
+            var user = _dbContext.Users.Where(x => x.Id == id).FirstOrDefault();
+            if (user == null)
+                return NotFound();
+
+            return Ok(user);
+        }
 
         [HttpPost]
         [Route("CreateUsers")]
@@ -60,6 +71,41 @@ namespace WittSolutionsApp2.Controllers
                 _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(x => x.Id == id));
                 _dbContext.SaveChanges();
             
+        }
+
+        [HttpPut]
+        [Route("UpdateUser{id}")]
+        public async Task<IActionResult> UpdateUser(int id, User user)
+        {
+            if (id != user.Id)
+            {
+                return BadRequest();
+            }
+
+            _dbContext.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool UserExists(int id)
+        {
+            return _dbContext.Users.Any(x => x.Id == id);
         }
     }
 }

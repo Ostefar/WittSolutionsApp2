@@ -10,7 +10,7 @@ import { NotificationService } from '../service/notification-service';
 @Component({
   selector: 'app-users',
   templateUrl: './users-overview.component.html',
-  styleUrls: ['./users-overview.component.css']
+  styleUrls: ['./../../styles.css']
 })
 export class UsersOverviewComponent implements OnInit {
 
@@ -30,13 +30,12 @@ export class UsersOverviewComponent implements OnInit {
   GetAllUsers() {
     this.userService.getAll().subscribe((data: User[]) => {
       this.users = data;
-      //console.log(this.users);
     })
   }
 
   DeleteUser(id: number)
   {
-    this.userService.delete(id).subscribe(user => {
+    this.userService.delete(id).subscribe(res => {
       this.showToasterSuccess();
       console.log('User deleted successfully!');
     })
@@ -48,7 +47,7 @@ export class UsersOverviewComponent implements OnInit {
   }
 
   reload() {
-    setTimeout(function () { location.reload(); }, 2000);
+    setTimeout(function () { window.location.reload(); }, 2000);
   }
 
   showToasterSuccess() {

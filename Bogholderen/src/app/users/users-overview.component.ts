@@ -36,7 +36,7 @@ export class UsersOverviewComponent implements OnInit {
 
   DeleteUser(id: number)
   {
-    this.userService.delete(id).subscribe(res => {
+    this.userService.delete(id).subscribe(user => {
       this.showToasterSuccess();
       console.log('User deleted successfully!');
     })

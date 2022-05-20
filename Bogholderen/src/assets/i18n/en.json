@@ -1,0 +1,28 @@
+{
+	"customers": {
+		"title": "Customers"
+	},
+	"employees": {
+		"title": "Employees"
+	},
+	"home": {
+		"title": "Home"
+	},
+	"management": {
+		"title": "Management"
+	},
+	"projects": {
+		"title": "Projects"
+	},
+	"users": {
+		"address_id": "Address id",
+		"email": "Email",
+		"firstname": "First name",
+		"lastname": "Last name",
+		"name": "Name",
+		"password": "Password",
+		"phone": "Phone",
+		"title": "Users",
+		"username": "Username"
+	}
+}

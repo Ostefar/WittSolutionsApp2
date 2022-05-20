@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { UsersOverviewComponent } from './users/users-overview.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdateUsersComponent } from './users/update-users.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -33,6 +35,13 @@ import { UpdateUsersComponent } from './users/update-users.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     FormsModule,
     NbButtonModule,
     ReactiveFormsModule,
@@ -60,3 +69,8 @@ import { UpdateUsersComponent } from './users/update-users.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// required for AOT(ahead of time) compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}

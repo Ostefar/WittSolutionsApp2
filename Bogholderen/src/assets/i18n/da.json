@@ -1,0 +1,28 @@
+{
+	"customers": {
+		"title": "Kunder"
+	},
+	"employees": {
+		"title": "Medarbejdere"
+	},
+	"home": {
+		"title": "Hjem"
+	},
+	"management": {
+		"title": "Management"
+	},
+	"projects": {
+		"title": "Projekter"
+	},
+	"users": {
+		"address_id": "Adresse id",
+		"email": "Email",
+		"firstname": "Fornavn",
+		"lastname": "Efternavn",
+		"name": "Navn",
+		"password": "Kodeord",
+		"phone": "Tlf. nr.",
+		"title": "Brugere",
+		"username": "Brugernavn"
+	}
+}

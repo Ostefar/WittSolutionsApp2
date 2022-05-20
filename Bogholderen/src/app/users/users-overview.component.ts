@@ -6,6 +6,7 @@ import { UserService } from '../service/user.service';
 import { User } from './User';
 import { Router } from '@angular/router';
 import { NotificationService } from '../service/notification-service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-users',
@@ -17,7 +18,7 @@ export class UsersOverviewComponent implements OnInit {
   //to hold users info from db
   users: User[] = [];
 
-  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private router: Router, private notifyService: NotificationService) {
+  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private router: Router, private notifyService: NotificationService, private translate: TranslateService) {
 
   }
 

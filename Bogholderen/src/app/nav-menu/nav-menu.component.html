@@ -15,32 +15,33 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" [routerLink]="['/']">{{ 'home.title' | translate}}</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/users-overview']">Users</a>
+            <a class="nav-link text-dark" [routerLink]="['/users-overview']">{{ 'users.title' | translate}}</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/customers']">Customers</a>
+            <a class="nav-link text-dark" [routerLink]="['/employees']">{{ 'employees.title' | translate}}</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/offers']">Offers</a>
+            <a class="nav-link text-dark" [routerLink]="['/customers']">{{ 'customers.title' | translate}}</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/projects']">Projects</a>
+            <a class="nav-link text-dark" [routerLink]="['/projects']">{{ 'projects.title' | translate}}</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/analytics']">Analytics</a>
+            <a class="nav-link text-dark" [routerLink]="['/analytics']">{{ 'management.title' | translate}}</a>
           </li>
         </ul>
+
+        <button (click)="useLanguage('en')">en</button>
+        <button (click)="useLanguage('da')">da</button>
       </div>
     </div>
   </nav>

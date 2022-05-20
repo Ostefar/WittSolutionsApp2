@@ -2,37 +2,37 @@
   <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
 
     <div class="col-md-2">
-      <label for="FirstName">First name</label>
+      <label for="FirstName">{{ 'users.firstname' | translate}}</label>
       <input id="FirstName" type="text" formControlName="FirstName" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="LastName">Last name</label>
+      <label for="LastName">{{ 'users.lastname' | translate}}</label>
       <input id="LastName" type="text" formControlName="LastName" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="UserName">Username</label>
+      <label for="UserName">{{ 'users.username' | translate}}</label>
       <input id="UserName" type="text" formControlName="UserName" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="Password">Password</label>
+      <label for="Password">{{ 'users.password' | translate}}</label>
       <input id="Password" type="text" formControlName="Password" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="Phone">Phone</label>
+      <label for="Phone">{{ 'users.phone' | translate}}</label>
       <input id="Phone" type="number" formControlName="Phone" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="Email">Email</label>
+      <label for="Email">{{ 'users.email' | translate}}</label>
       <input id="Email" type="text" formControlName="Email" class="form-control">
     </div>
 
     <div class="col-md-2">
-      <label for="Address_id">Address id</label>
+      <label for="Address_id">{{ 'users.address_id' | translate}}</label>
       <input id="Address_id" type="number" formControlName="Address_id" class="form-control">
     </div>
 

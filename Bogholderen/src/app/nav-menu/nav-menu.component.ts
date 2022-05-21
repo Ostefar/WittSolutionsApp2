@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavMenuComponent {
   isExpanded = false;
 
+
+
   constructor(private translate: TranslateService) {
   }
 

@@ -16,3 +16,24 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+button {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background-color: white;
+  color: black;
+  border: 2px solid #0275d8;
+  transition-duration: 0.4s;
+}
+
+  button:hover {
+    background-color: #0275d8; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

@@ -6,5 +6,12 @@ export interface User {
   password: string;
   phone: number;
   email: string;
-  address_id: number;
+  addressLine1: string;
+  addressLine2: string;
+  country: string;
+  city: string;
+  zipCode: string;
+
+
+
 }

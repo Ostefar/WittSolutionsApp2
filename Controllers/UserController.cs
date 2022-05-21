@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using WittSolutionsApp2.Data;
+using WittSolutionsApp2.DTO_s.User;
 using WittSolutionsApp2.Models;
 
 namespace WittSolutionsApp2.Controllers
@@ -21,7 +22,14 @@ namespace WittSolutionsApp2.Controllers
 
         [HttpGet]
         [Route("ViewUsers")]
-        public IQueryable<User> GetUsers()
+        public async Task<IActionResult> GetAll()
+        {
+            
+            var user = await _dbContext.Users.ToListAsync();
+
+            return Ok(user);
+        }
+        /*public IQueryable<User> GetUsers()
         {
             return _dbContext.Users.GroupBy(user => user.Id)
                   .Select(group =>
@@ -34,29 +42,66 @@ namespace WittSolutionsApp2.Controllers
                             Password = group.FirstOrDefault().Password,
                             Phone = group.FirstOrDefault().Phone,
                             Email = group.FirstOrDefault().Email,
-                            Address_id = group.FirstOrDefault().Address_id,
+                            AddressId = group.FirstOrDefault().Address_id,
 
                         })
                   .OrderBy(group => group.FirstName);
-        }
+        }*/
         [HttpGet]
         [Route("GetUserBy{id}")]
         public IActionResult GetById(int id)
         {
             var user = _dbContext.Users.Where(x => x.Id == id).FirstOrDefault();
-            if (user == null)
+            var addressId = user.AddressId;
+            var address = _dbContext.Address.Where(x => x.Id == addressId).FirstOrDefault();
+
+            if (user == null | address == null)
                 return NotFound();
 
-            return Ok(user);
+            AddUserDTO userToEdit = new AddUserDTO()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                UserName = user.UserName,
+                Password = user.Password,
+                Phone = user.Phone,
+                Email = user.Email,
+                AddressLine1 = address.AddressLine1,
+                AddressLine2 = address.AddressLine2,
+                Country = address.Country,
+                City = address.City,
+                ZipCode = address.ZipCode,
+            };
+            return Ok(userToEdit);
         }
 
         [HttpPost]
         [Route("CreateUsers")]
-        public async Task<IActionResult> Post(User payload)
+        public async Task<IActionResult> Post(AddUserDTO payload)
         {
             if (payload is not null)
             {
-                _dbContext.Users.Add(payload);
+                Address newAddressData = new Address()
+                {
+                    AddressLine1 = payload.AddressLine1,
+                    AddressLine2 = payload.AddressLine2,
+                    Country = payload.Country,
+                    City = payload.City,
+                    ZipCode = payload.ZipCode
+                };
+
+                User newUserData = new User()
+                {
+                    FirstName = payload.FirstName,
+                    LastName = payload.LastName,
+                    UserName = payload.UserName,
+                    Password = payload.Password,
+                    Phone = payload.Phone,
+                    Email = payload.Email,
+                    Address = newAddressData,
+                };
+
+                _dbContext.Users.Add(newUserData);
                 await _dbContext.SaveChangesAsync();
                 return Ok(payload);
             }
@@ -68,8 +113,13 @@ namespace WittSolutionsApp2.Controllers
         [Route("DeleteUser{id}")]
         public void DeleteUser(int id)
         {
-                _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(x => x.Id == id));
-                _dbContext.SaveChanges();
+            var user = _dbContext.Users.Where(x => x.Id == id).FirstOrDefault();
+            var addressId = user.AddressId;
+            
+
+            _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(x => x.Id == id));
+            _dbContext.Address.Remove(_dbContext.Address.FirstOrDefault(x => x.Id == addressId));
+            _dbContext.SaveChanges();
             
         }
 

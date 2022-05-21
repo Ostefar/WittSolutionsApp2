@@ -30,8 +30,12 @@ namespace WittSolutionsApp2.Models
         [Required(ErrorMessage = "Email field is required.")]
         [StringLength(maximumLength: 45, MinimumLength = 2)]
         public string Email { get; set; }
-        
-        public int Address_id { get; set; }
+
+        public int? AddressId { get; set; }
+
+        [ForeignKey("AddressId")]
+        public Address? Address { get; set; }
+
     }
 }
 

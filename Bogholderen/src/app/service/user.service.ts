@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { User } from "../users/User";
+//import { AddUserDTO } from "../../../../../DTO's/User";
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,6 @@ export class UserService {
   }
 
   create(payload: User) {
-    debugger
     return this.http.post<User>(this.APIUrl + '/CreateUsers', payload
     );
   }

@@ -25,14 +25,18 @@ export class UpdateUsersComponent implements OnInit
   }
   private updateForm() { 
     this.updateUserForm = this.fb.group({
-      Id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]),
+    Id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]),
     FirstName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     LastName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     UserName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     Password: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     Phone: new FormControl( [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
     Email: new FormControl( '' , [Validators.required, Validators.email]),
-    Address_id: new FormControl([Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
+    AddressLine1: new FormControl("",[Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    AddressLine2: new FormControl("",[Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    Country: new FormControl("",[Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    City: new FormControl("",[Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    ZipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
   });
   }
 
@@ -45,19 +49,24 @@ export class UpdateUsersComponent implements OnInit
   }
 
   getById() {
+    debugger
     this.id = this.route.snapshot.params['id'];
 
     this.userService.getById(this.id).subscribe((data: User) => {
       this.user = data;
       this.updateUserForm.setValue({
-        Id: this.user.id,
+        Id: this.id,
         FirstName: this.user.firstName,
         LastName: this.user.lastName,
         UserName: this.user.userName,
         Password: this.user.password,
         Phone: this.user.phone,
         Email: this.user.email,
-        Address_id: this.user.address_id,
+        AddressLine1: this.user.addressLine1,
+        AddressLine2: this.user.addressLine2,
+        Country: this.user.country,
+        City: this.user.city,
+        ZipCode: this.user.zipCode,
         
       });
     });

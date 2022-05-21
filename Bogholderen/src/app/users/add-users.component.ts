@@ -29,8 +29,12 @@ export class AddUsersComponent implements OnInit
     UserName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     Password: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     Phone: new FormControl( [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
-    Email: new FormControl( '' , [Validators.required, Validators.email]),
-    Address_id: new FormControl([Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
+    Email: new FormControl('', [Validators.required, Validators.email]),
+    AddressLine1: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    AddressLine2: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    Country: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+    City: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+    ZipCode: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
   });
   }
 
@@ -43,6 +47,7 @@ export class AddUsersComponent implements OnInit
 
   onSubmit()
   {
+    debugger
     if (this.addUserForm.valid) {
       this.userService.create(this.addUserForm.value)
         .subscribe(

@@ -31,6 +31,7 @@ export class UsersOverviewComponent implements OnInit {
   GetAllUsers() {
     this.userService.getAll().subscribe((data: User[]) => {
       this.users = data;
+      console.log(this.users)
     })
   }
 

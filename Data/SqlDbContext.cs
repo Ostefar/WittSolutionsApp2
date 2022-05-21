@@ -13,11 +13,13 @@ namespace WittSolutionsApp2.Data
 
         public DbSet<Employee>? Employee { get; set; }
 
+        public DbSet<Address>? Address { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<User>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
-            builder.Entity<Employee>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            builder.Entity<User>()
+            .HasOne<Address>(x => x.Address);
+            builder.Entity<Employee>().Property(x => x.Id);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace WittSolutionsApp2.Models
     public class Address
     {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required(ErrorMessage = "Address line 1 field is required.")]
         [StringLength(maximumLength: 50, MinimumLength = 2)]

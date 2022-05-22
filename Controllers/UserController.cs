@@ -24,29 +24,29 @@ namespace WittSolutionsApp2.Controllers
         [Route("ViewUsers")]
         public async Task<IActionResult> GetAll()
         {
-            
-            var user = await _dbContext.Users.ToListAsync();
 
-            return Ok(user);
+            var result = (from user in _dbContext.Users
+                          join address in _dbContext.Address on user.AddressId equals address.Id
+                          select new
+                          {
+                              Id = user.Id,
+                              FirstName = user.FirstName,
+                              LastName = user.LastName,
+                              UserName = user.UserName,
+                              Password = user.Password,
+                              Phone = user.Phone,
+                              Email = user.Email,
+                              AddressLine1 = address.AddressLine1,
+                              AddressLine2 = address.AddressLine2,
+                              Country = address.Country,
+                              City = address.City,
+                              ZipCode = address.ZipCode
+
+                          }).ToList();
+
+            return Ok(result);
         }
-        /*public IQueryable<User> GetUsers()
-        {
-            return _dbContext.Users.GroupBy(user => user.Id)
-                  .Select(group =>
-                        new User
-                        {
-                            Id = group.Key,
-                            FirstName = group.FirstOrDefault().FirstName,
-                            LastName = group.FirstOrDefault().LastName,
-                            UserName = group.FirstOrDefault().UserName,
-                            Password = group.FirstOrDefault().Password,
-                            Phone = group.FirstOrDefault().Phone,
-                            Email = group.FirstOrDefault().Email,
-                            AddressId = group.FirstOrDefault().Address_id,
-
-                        })
-                  .OrderBy(group => group.FirstName);
-        }*/
+       
         [HttpGet]
         [Route("GetUserBy{id}")]
         public IActionResult GetById(int id)
@@ -125,37 +125,50 @@ namespace WittSolutionsApp2.Controllers
 
         [HttpPut]
         [Route("UpdateUser{id}")]
-        public async Task<IActionResult> UpdateUser(int id, User user)
+        public async Task<IActionResult> UpdateUser(AddUserDTO payload)
         {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
+            var user = _dbContext.Users
+            .Where(x => x.Id == payload.Id)
+            .Include(x => x.Address)
+            .SingleOrDefault();
 
-            _dbContext.Entry(user).State = EntityState.Modified;
+            var addressId = user.AddressId;
 
-            try
+            var address = _dbContext.Address.Where(x => x.Id == addressId).SingleOrDefault();
+
+            if (payload is not null)
             {
+                Address addressData = new Address()
+                {
+                    Id = addressId,
+                    AddressLine1 = payload.AddressLine1,
+                    AddressLine2 = payload.AddressLine2,
+                    Country = payload.Country,
+                    City = payload.City,
+                    ZipCode = payload.ZipCode
+                };
+
+                User userData = new User()
+                {
+                    Id = payload.Id,
+                    FirstName = payload.FirstName,
+                    LastName = payload.LastName,
+                    UserName = payload.UserName,
+                    Password = payload.Password,
+                    Phone = payload.Phone,
+                    Email = payload.Email,
+                    AddressId = addressId,
+                    Address = addressData,
+                };
+                _dbContext.Entry(user).CurrentValues.SetValues(userData);
+                _dbContext.Entry(address).CurrentValues.SetValues(addressData);
                 await _dbContext.SaveChangesAsync();
+                return Ok(payload);
             }
-            catch (DbUpdateConcurrencyException)
+            else
             {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest(payload);
             }
-
-            return NoContent();
-        }
-
-        private bool UserExists(int id)
-        {
-            return _dbContext.Users.Any(x => x.Id == id);
         }
     }
 }

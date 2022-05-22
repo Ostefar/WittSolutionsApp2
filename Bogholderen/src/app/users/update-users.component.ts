@@ -49,7 +49,6 @@ export class UpdateUsersComponent implements OnInit
   }
 
   getById() {
-    debugger
     this.id = this.route.snapshot.params['id'];
 
     this.userService.getById(this.id).subscribe((data: User) => {

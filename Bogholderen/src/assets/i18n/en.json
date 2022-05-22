@@ -1,4 +1,11 @@
 {
+	"address": {
+		"addressline1": "Address line 1",
+		"addressline2": "Address line 2",
+		"city": "City",
+		"country": "Country",
+		"zipcode": "Zip code"
+	},
 	"customers": {
 		"title": "Customers"
 	},
@@ -15,6 +22,7 @@
 		"title": "Projects"
 	},
 	"users": {
+		"address": "Address",
 		"address_id": "Address id",
 		"email": "Email",
 		"firstname": "First name",

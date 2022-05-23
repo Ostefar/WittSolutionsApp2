@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { UpdateUsersComponent } from './users/update-users.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { EmployeesOverviewComponent } from './employees/employees-overview.component';
 
 
 
@@ -30,6 +31,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     HomeComponent,
     AddUsersComponent,
     UsersOverviewComponent,
+    EmployeesOverviewComponent,
     UpdateUsersComponent,
   ],
   imports: [
@@ -63,6 +65,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       { path: 'users-overview', component: UsersOverviewComponent },
       { path: 'add-users', component: AddUsersComponent },
       { path: 'update-users/:id', component: UpdateUsersComponent },
+      { path: 'employees-overview', component: EmployeesOverviewComponent },
+      //{ path: 'add-users', component: AddUsersComponent },
+      //{ path: 'update-users/:id', component: UpdateUsersComponent },
     ])
   ],
   providers: [],

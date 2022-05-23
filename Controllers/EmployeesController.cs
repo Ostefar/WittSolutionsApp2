@@ -14,11 +14,39 @@ namespace WittSolutionsApp2.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly SqlDbContext _context;
-
-        public EmployeesController(SqlDbContext context)
+        private readonly SqlDbContext _dbContext;
+        private readonly IConfiguration _configuration;
+        public EmployeesController(SqlDbContext ctx, IConfiguration configuration)
         {
-            _context = context;
+            _dbContext = ctx;
+            _configuration = configuration;
+        }
+
+        [HttpGet]
+        [Route("ViewUsers")]
+        public async Task<IActionResult> GetAll()
+        {
+
+            var result = (from employee in _dbContext.Employees
+                          join address in _dbContext.Address on employee.AddressId equals address.Id
+                          select new
+                          {
+                              Id = employee.Id,
+                              FirstName = employee.FirstName,
+                              LastName = employee.LastName,
+                              JobTitle = employee.JobTitle,
+                              Salary = employee.Salary,
+                              Phone = employee.Phone,
+                              Email = employee.Email,
+                              AddressLine1 = address.AddressLine1,
+                              AddressLine2 = address.AddressLine2,
+                              Country = address.Country,
+                              City = address.City,
+                              ZipCode = address.ZipCode
+
+                          }).ToList();
+
+            return Ok(result);
         }
 
         /*// GET: api/Employees

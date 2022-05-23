@@ -10,6 +10,8 @@
 		"title": "Customers"
 	},
 	"employees": {
+		"jobtitle": "Job title",
+		"salary": "Salary",
 		"title": "Employees"
 	},
 	"error": {

@@ -10,6 +10,8 @@
 		"title": "Kunder"
 	},
 	"employees": {
+		"jobtitle": "Stilling",
+		"salary": "Løn",
 		"title": "Medarbejdere"
 	},
 	"error": {

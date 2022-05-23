@@ -49,7 +49,8 @@ export class UsersOverviewComponent implements OnInit {
   }
 
   reload() {
-    setTimeout(function () { window.location.reload(); }, 2000);
+    setTimeout(() => { this.router.navigateByUrl('/'); }, 1900);
+    setTimeout(() => { this.router.navigateByUrl('/users-overview'); }, 2000);
   }
 
   showToasterSuccess() {

@@ -12,7 +12,7 @@ import { User } from './User';
 @Component({
   selector: 'app-users',
   templateUrl: './update-users.component.html',
-  styleUrls: ['./../../styles.css']
+  styleUrls: ['./update-users.component.css']
 })
 export class UpdateUsersComponent implements OnInit
 {

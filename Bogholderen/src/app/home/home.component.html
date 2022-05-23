@@ -1,9 +1,9 @@
-<div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="d-flex justify-content-center" *ngIf="!isLoggedIn">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-    <div class="col-md-2">
-      <label for="UserName">{{ 'users.username' | translate}}</label>
-      <input id="UserName" type="text" formControlName="UserName" class="form-control">
+  <div class="d-flex row col-md-6">
+    <div class="p-2">
+      <input id="UserName" type="text" formControlName="UserName" class="form-control" placeholder="{{ 'users.username' | translate}}">
       <div *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)" class="alert alert-danger">
         <div *ngIf="userName?.errors">
           {{ 'users.username' | translate}} {{ 'shared.required' | translate}}
@@ -11,9 +11,8 @@
       </div>
     </div>
 
-    <div class="col-md-2">
-      <label for="Password">{{ 'users.password' | translate}}</label>
-      <input id="Password" type="text" formControlName="Password" class="form-control">
+    <div class="p-2">
+      <input id="Password" type="text" formControlName="Password" class="form-control" placeholder="{{ 'users.password' | translate}}">
       <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
         <div *ngIf="password?.errors">
           {{ 'users.password' | translate}} {{ 'shared.required' | translate}}
@@ -21,11 +20,17 @@
       </div>
     </div>
 
+
     <br />
 
-    <div class="col-md-2">
-      <button type="submit" [disabled]="loginForm.invalid" class="form-control">Submit</button>
+    <div class="p-2">
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary ">Submit</button>
     </div>
-  </form>
+  </div>
+</form>
 </div>
 
+<div *ngIf="isLoggedIn">
+
+  <p>welcome back my friend</p>
+</div>

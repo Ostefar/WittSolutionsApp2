@@ -11,7 +11,7 @@ import { User } from './User';
 @Component({
   selector: 'app-users',
   templateUrl: './add-users.component.html',
-  styleUrls: ['./../../styles.css']
+  styleUrls: ['./add-users.component.css']
 })
 export class AddUsersComponent implements OnInit
 {

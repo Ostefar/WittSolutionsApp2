@@ -5,11 +5,13 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./../../styles.css']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
   loginForm!: FormGroup;
+
+  isLoggedIn = false;
 
   constructor(private translate: TranslateService, private fb: FormBuilder) {
   }

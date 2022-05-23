@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { first } from 'rxjs/operators';
 import { NotificationService } from '../service/notification-service';
 import { UserService } from '../service/user.service';
@@ -20,7 +21,7 @@ export class UpdateUsersComponent implements OnInit
   updateUserForm!: FormGroup;
 
 
-  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router) {
+  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
    
   }
   private updateForm() { 
@@ -94,6 +95,7 @@ export class UpdateUsersComponent implements OnInit
       this.showToasterError();
     }
     this.reload();
+
   }
 
   reload() {
@@ -101,12 +103,35 @@ export class UpdateUsersComponent implements OnInit
   }
 
   showToasterSuccess() {
-    this.notifyService.showSuccess("User updated", "Success!")
+    this.notifyService.showSuccess(this.translate.instant("success.userupdated"), this.translate.instant("success.success"))
   }
 
   showToasterError() {
-    this.notifyService.showError("Something went wrong", "Error!")
+    this.notifyService.showError(this.translate.instant("error.errormessage"), this.translate.instant("error.error"))
   }
+
+
+  get firstName() { return this.updateUserForm.get("FirstName"); }
+
+  get lastName() { return this.updateUserForm.get("LastName"); }
+
+  get userName() { return this.updateUserForm.get("UserName"); }
+
+  get password() { return this.updateUserForm.get("Password"); }
+
+  get phone() { return this.updateUserForm.get("Phone"); }
+
+  get email() { return this.updateUserForm.get("Email"); }
+
+  get addressLine1() { return this.updateUserForm.get("AddressLine1"); }
+
+  get addressLine2() { return this.updateUserForm.get("AddressLine2"); }
+
+  get country() { return this.updateUserForm.get("Country"); }
+
+  get city() { return this.updateUserForm.get("City"); }
+
+  get zipCode() { return this.updateUserForm.get("ZipCode"); }
 
 }
 

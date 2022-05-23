@@ -12,6 +12,10 @@
 	"employees": {
 		"title": "Employees"
 	},
+	"error": {
+		"error": "Error",
+		"errormessage": "Something went wrong, try again"
+	},
 	"home": {
 		"title": "Home"
 	},
@@ -20,6 +24,14 @@
 	},
 	"projects": {
 		"title": "Projects"
+	},
+	"shared": {
+		"required": "is required"
+	},
+	"success": {
+		"success": "Success",
+		"usercreated": "New user created",
+		"userupdated": "User updated"
 	},
 	"users": {
 		"address": "Address",

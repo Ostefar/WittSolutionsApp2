@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from '../service/notification-service';
 import { UserService } from '../service/user.service';
 import { User } from './User';
@@ -19,7 +20,7 @@ export class AddUsersComponent implements OnInit
   addUserForm!: FormGroup;
 
 
-  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private router: Router) {
+  constructor(public fb: FormBuilder, private userService: UserService, private http: HttpClient, private notifyService: NotificationService, private router: Router, private translate: TranslateService) {
    
   }
   private createForm() { 
@@ -28,7 +29,7 @@ export class AddUsersComponent implements OnInit
     LastName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     UserName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
     Password: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
-    Phone: new FormControl( [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
+    Phone: new FormControl( [Validators.required, Validators.minLength(8), Validators.maxLength(8)]),
     Email: new FormControl('', [Validators.required, Validators.email]),
     AddressLine1: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
     AddressLine2: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
@@ -47,14 +48,12 @@ export class AddUsersComponent implements OnInit
 
   onSubmit()
   {
-    debugger
     if (this.addUserForm.valid) {
       this.userService.create(this.addUserForm.value)
         .subscribe(
           (data) => {
             this.showToasterSuccess();
             console.log('Form submitted successfully');
-            console.log(this.addUserForm.value)
           },
           (error: HttpErrorResponse) => {
             this.showToasterError();
@@ -73,11 +72,11 @@ export class AddUsersComponent implements OnInit
   }
 
   showToasterSuccess() {
-    this.notifyService.showSuccess("New user created", "Success!")
+    this.notifyService.showSuccess(this.translate.instant("success.usercreated"), this.translate.instant("success.success"))
   }
 
   showToasterError() {
-    this.notifyService.showError("Something went wrong", "Error!")
+    this.notifyService.showError(this.translate.instant("success.errormessage"), this.translate.instant("success.error"))
   }
 
   /*showToasterInfo() {
@@ -87,20 +86,26 @@ export class AddUsersComponent implements OnInit
   showToasterWarning() {
     this.notifyService.showWarning("This is warning", "New user")
   }*/
+
+  get firstName() { return this.addUserForm.get("FirstName"); }
+
+  get lastName() { return this.addUserForm.get("LastName"); }
+
+  get userName() { return this.addUserForm.get("UserName"); }
+
+  get password() { return this.addUserForm.get("Password"); }
+
+  get phone() { return this.addUserForm.get("Phone"); }
+
+  get email() { return this.addUserForm.get("Email"); }
+
+  get addressLine1() { return this.addUserForm.get("AddressLine1"); }
+
+  get addressLine2() { return this.addUserForm.get("AddressLine2"); }
+
+  get country() { return this.addUserForm.get("Country"); }
+
+  get city() { return this.addUserForm.get("City"); }
+
+  get zipCode() { return this.addUserForm.get("ZipCode"); }
 }
-
-
-  
-
-  /* get() {
-    this.studentService.get()
-      .subscribe({
-        next: (data) => {
-          this.students = data;
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      })
-  } */
-

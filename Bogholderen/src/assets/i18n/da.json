@@ -12,6 +12,10 @@
 	"employees": {
 		"title": "Medarbejdere"
 	},
+	"error": {
+		"error": "Fejl",
+		"errormessage": "Der gik noget galt, prøv igen"
+	},
 	"home": {
 		"title": "Hjem"
 	},
@@ -20,6 +24,14 @@
 	},
 	"projects": {
 		"title": "Projekter"
+	},
+	"shared": {
+		"required": "skal udfyldes"
+	},
+	"success": {
+		"success": "Succes",
+		"usercreated": "Ny bruger oprettet",
+		"userupdated": "Bruger opdateret"
 	},
 	"users": {
 		"address": "Adresse",

@@ -29,8 +29,10 @@
 		"required": "skal udfyldes"
 	},
 	"success": {
+		"employeedeleted": "Medarbejder slettet",
 		"success": "Succes",
 		"usercreated": "Ny bruger oprettet",
+		"userdeleted": "Bruger slettet",
 		"userupdated": "Bruger opdateret"
 	},
 	"users": {

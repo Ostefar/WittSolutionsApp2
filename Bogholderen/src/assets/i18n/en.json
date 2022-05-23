@@ -29,8 +29,10 @@
 		"required": "is required"
 	},
 	"success": {
+		"employeedeleted": "Employee deleted",
 		"success": "Success",
 		"usercreated": "New user created",
+		"userdeleted": "User deleted",
 		"userupdated": "User updated"
 	},
 	"users": {

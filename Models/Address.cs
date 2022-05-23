@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WittSolutionsApp2.Models
 {
     public class Address
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "Address line 1 field is required.")]
@@ -25,6 +27,8 @@ namespace WittSolutionsApp2.Models
         public string Country { get; set; }
 
         public ICollection<User> Users { get; set; }
+
+        public ICollection<Employees> Employees { get; set; }
 
     }
 }

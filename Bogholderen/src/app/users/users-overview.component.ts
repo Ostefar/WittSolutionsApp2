@@ -54,11 +54,11 @@ export class UsersOverviewComponent implements OnInit {
   }
 
   showToasterSuccess() {
-    this.notifyService.showSuccess("User deleted", "Success!")
+    this.notifyService.showSuccess(this.translate.instant("success.userdeleted"), this.translate.instant("success.success"))
   }
 
   showToasterError() {
-    this.notifyService.showError("Something went wrong", "Error!")
+    this.notifyService.showError(this.translate.instant("error.errormessage"), this.translate.instant("error.error"))
   }
 
   /*showToasterInfo() {

@@ -21,7 +21,7 @@ namespace WittSolutionsApp2.Controllers
             _context = context;
         }
 
-        // GET: api/Employees
+        /*// GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
         {
@@ -119,6 +119,6 @@ namespace WittSolutionsApp2.Controllers
         private bool EmployeeExists(int id)
         {
             return (_context.Employee?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+        }*/
     }
 }

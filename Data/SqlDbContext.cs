@@ -11,7 +11,7 @@ namespace WittSolutionsApp2.Data
         }
         public DbSet<User>? Users { get; set; }
 
-        public DbSet<Employee>? Employee { get; set; }
+        public DbSet<Employees>? Employee { get; set; }
 
         public DbSet<Address>? Address { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
@@ -19,7 +19,7 @@ namespace WittSolutionsApp2.Data
             base.OnModelCreating(builder);
             builder.Entity<User>()
             .HasOne<Address>(x => x.Address);
-            builder.Entity<Employee>().Property(x => x.Id);
+            builder.Entity<Employees>().Property(x => x.Id);
         }
     }
 }

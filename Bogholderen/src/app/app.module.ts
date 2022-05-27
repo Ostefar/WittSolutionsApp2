@@ -10,17 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { NbButtonModule, NbTabsetModule } from '@nebular/theme';
 import { AddUsersComponent } from './users/add-users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table'
-import { MatDialogModule } from '@angular/material/dialog'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
-import { MatButtonModule } from '@angular/material/button'
 import { UsersOverviewComponent } from './users/users-overview.component';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdateUsersComponent } from './users/update-users.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { EmployeesOverviewComponent } from './employees/employees-overview.component';
+import { AddEmployeesComponent } from './employees/add-employees.component';
+import { UpdateEmployeesComponent } from './employees/update-employees.component';
 
 
 
@@ -33,6 +30,8 @@ import { EmployeesOverviewComponent } from './employees/employees-overview.compo
     UsersOverviewComponent,
     EmployeesOverviewComponent,
     UpdateUsersComponent,
+    AddEmployeesComponent,
+    UpdateEmployeesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,11 +46,6 @@ import { EmployeesOverviewComponent } from './employees/employees-overview.compo
     FormsModule,
     NbButtonModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-right',
@@ -66,8 +60,8 @@ import { EmployeesOverviewComponent } from './employees/employees-overview.compo
       { path: 'add-users', component: AddUsersComponent },
       { path: 'update-users/:id', component: UpdateUsersComponent },
       { path: 'employees-overview', component: EmployeesOverviewComponent },
-      //{ path: 'add-users', component: AddUsersComponent },
-      //{ path: 'update-users/:id', component: UpdateUsersComponent },
+      { path: 'add-employees', component: AddEmployeesComponent },
+      { path: 'update-employees/:id', component: UpdateEmployeesComponent },
     ])
   ],
   providers: [],

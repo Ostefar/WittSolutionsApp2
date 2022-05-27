@@ -10,9 +10,14 @@
 		"title": "Customers"
 	},
 	"employees": {
+		"birthdate": "Birth date",
+		"hiringdate": "Hiring date",
 		"jobtitle": "Job title",
-		"salary": "Salary",
-		"title": "Employees"
+		"salary": "Hourly salary",
+		"sickdays": "Sick days",
+		"title": "Employees",
+		"vacationdays": "Vacation days",
+		"vacationdaysleft": "Vacation days left"
 	},
 	"error": {
 		"error": "Error",
@@ -31,7 +36,9 @@
 		"required": "is required"
 	},
 	"success": {
+		"employeecreated": "New employee created",
 		"employeedeleted": "Employee deleted",
+		"employeeupdated": "Employee updated",
 		"success": "Success",
 		"usercreated": "New user created",
 		"userdeleted": "User deleted",

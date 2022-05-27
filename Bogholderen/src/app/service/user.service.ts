@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 import { catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { User } from "../users/User";
-//import { AddUserDTO } from "../../../../../DTO's/User";
 
 @Injectable({
   providedIn: 'root'

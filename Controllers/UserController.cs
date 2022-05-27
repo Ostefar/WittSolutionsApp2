@@ -109,6 +109,7 @@ namespace WittSolutionsApp2.Controllers
                 return BadRequest(payload);
             }
         }
+
         [HttpDelete]
         [Route("DeleteUser{id}")]
         public void DeleteUser(int id)

@@ -76,7 +76,7 @@ export class AddUsersComponent implements OnInit
   }
 
   showToasterError() {
-    this.notifyService.showError(this.translate.instant("success.errormessage"), this.translate.instant("success.error"))
+    this.notifyService.showError(this.translate.instant("error.errormessage"), this.translate.instant("error.error"))
   }
 
   /*showToasterInfo() {

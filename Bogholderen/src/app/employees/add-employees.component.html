@@ -1,0 +1,179 @@
+<div>
+  <form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="FirstName" type="text" formControlName="FirstName" class="form-control" placeholder="{{ 'users.firstname' | translate}}">
+          <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)" class="alert alert-danger">
+            <div *ngIf="firstName?.errors">
+              {{ 'users.firstname' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <input id="LastName" type="text" formControlName="LastName" class="form-control" placeholder="{{ 'users.lastname' | translate}}">
+          <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)" class="alert alert-danger">
+            <div *ngIf="lastName?.errors">
+              {{ 'users.lastname' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="Phone" type="number" formControlName="Phone" class="form-control" placeholder="{{ 'users.phone' | translate}}">
+          <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="alert alert-danger">
+            <div *ngIf="phone?.errors">
+              {{ 'users.phone' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <input id="Email" type="text" formControlName="Email" class="form-control" placeholder="{{ 'users.email' | translate}}">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+            <div *ngIf="email?.errors">
+              {{ 'users.email' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="JobTitle" type="text" formControlName="JobTitle" class="form-control" placeholder="{{ 'employees.jobtitle' | translate}}">
+          <div *ngIf="jobTitle?.invalid && (jobTitle?.dirty || jobTitle?.touched)" class="alert alert-danger">
+            <div *ngIf="jobTitle?.errors">
+              {{ 'employees.jobtitle' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="Hiringdate">{{ 'employees.hiringdate' | translate}}</label>
+          <input id="HiringDate" type="Date" formControlName="HiringDate" class="form-control" placeholder="{{ 'employees.hiringdate' | translate}}">
+          <div *ngIf="hiringDate?.invalid && (hiringDate?.dirty || hiringDate?.touched)" class="alert alert-danger">
+            <div *ngIf="hiringDate?.errors">
+              {{ 'employees.hiringdate' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="BirthDate">{{ 'employees.birthdate' | translate}}</label>
+          <input id="BirthDate" type="Date" formControlName="BirthDate" class="form-control" placeholder="{{ 'employees.birthdate' | translate}}">
+          <div *ngIf="birthDate?.invalid && (birthDate?.dirty || birthDate?.touched)" class="alert alert-danger">
+            <div *ngIf="birthDate?.errors">
+              {{ 'employees.birthdate' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="d-flex flex-row">
+      <div class="p-2 col-md-2">
+        <input id="VacationDays" type="text" formControlName="VacationDays" class="form-control" placeholder="{{ 'employees.vacationdays' | translate}}">
+        <div *ngIf="vacationDays?.invalid && (vacationDays?.dirty || vacationDays?.touched)" class="alert alert-danger">
+          <div *ngIf="vacationDays?.errors">
+            {{ 'employees.vacationdays' | translate}} {{ 'shared.required' | translate}}
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 col-md-2">
+        <input id="VacationDaysLeft" type="text" formControlName="VacationDaysLeft" class="form-control" placeholder="{{ 'employees.vacationdaysleft' | translate}}">
+        <div *ngIf="vacationDaysLeft?.invalid && (vacationDaysLeft?.dirty || vacationDaysLeft?.touched)" class="alert alert-danger">
+          <div *ngIf="vacationDaysLeft?.errors">
+            {{ 'employees.vacationdaysleft' | translate}} {{ 'shared.required' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="p-2 col-md-2">
+        <input id="SickDays" type="text" formControlName="SickDays" class="form-control" placeholder="{{ 'employees.sickdays' | translate}}">
+        <div *ngIf="sickDays?.invalid && (sickDays?.dirty || sickDays?.touched)" class="alert alert-danger">
+          <div *ngIf="sickDays?.errors">
+            {{ 'employees.Sickdays' | translate}} {{ 'shared.required' | translate}}
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 col-md-2">
+        <input id="Salary" type="text" formControlName="Salary" class="form-control" placeholder="{{ 'employees.salary' | translate}}">
+        <div *ngIf="salary?.invalid && (salary?.dirty || salary?.touched)" class="alert alert-danger">
+          <div *ngIf="salary?.errors">
+            {{ 'employees.hirinsalarygdate' | translate}} {{ 'shared.required' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="AddressLine1" type="text" formControlName="AddressLine1" class="form-control" placeholder="{{ 'address.addressline1' | translate}}">
+          <div *ngIf="addressLine1?.invalid && (addressLine1?.dirty || addressLine1?.touched)" class="alert alert-danger">
+            <div *ngIf="addressLine1?.errors">
+              {{ 'address.addressline1' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <input id="AddressLine2" type="text" formControlName="AddressLine2" class="form-control" placeholder="{{ 'address.addressline2' | translate}}">
+          <div *ngIf="addressLine2?.invalid && (addressLine2?.dirty || addressLine2?.touched)" class="alert alert-danger">
+            <div *ngIf="addressLine2?.errors">
+              {{ 'address.addressline2' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="Country" type="text" formControlName="Country" class="form-control" placeholder="{{ 'address.country' | translate}}">
+          <div *ngIf="country?.invalid && (country?.dirty || country?.touched)" class="alert alert-danger">
+            <div *ngIf="country?.errors">
+              {{ 'address.country' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <input id="City" type="text" formControlName="City" class="form-control" placeholder="{{ 'address.city' | translate}}">
+          <div *ngIf="city?.invalid && (city?.dirty || city?.touched)" class="alert alert-danger">
+            <div *ngIf="city?.errors">
+              {{ 'address.city' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="ZipCode" type="text" formControlName="ZipCode" class="form-control" placeholder="{{ 'address.zipcode' | translate}}">
+          <div *ngIf="zipCode?.invalid && (zipCode?.dirty || zipCode?.touched)" class="alert alert-danger">
+            <div *ngIf="zipCode?.errors">
+              {{ 'address.zipcode' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="d-flex flex-row">
+      <div class="p-2 col-md-2">
+        <button type="submit" [disabled]="addEmployeeForm.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+

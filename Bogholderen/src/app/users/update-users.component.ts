@@ -76,14 +76,12 @@ export class UpdateUsersComponent implements OnInit
 
   onSubmit()
   {
-    debugger
     if (this.updateUserForm.valid) {
       this.userService.update(this.id, this.updateUserForm.value)
         .subscribe(
           (data) => {
             this.showToasterSuccess();
             console.log('Form submitted successfully');
-            console.log(this.updateUserForm.value)
           },
           (error: HttpErrorResponse) => {
             this.showToasterError();

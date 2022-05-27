@@ -10,9 +10,14 @@
 		"title": "Kunder"
 	},
 	"employees": {
+		"birthdate": "Fødsels dato",
+		"hiringdate": "Ansættelses dato",
 		"jobtitle": "Stilling",
-		"salary": "Løn",
-		"title": "Medarbejdere"
+		"salary": "Timeløn",
+		"sickdays": "Sygedage",
+		"title": "Medarbejdere",
+		"vacationdays": "Ferie dage",
+		"vacationdaysleft": "Ferie dage tilbage"
 	},
 	"error": {
 		"error": "Fejl",
@@ -31,7 +36,9 @@
 		"required": "skal udfyldes"
 	},
 	"success": {
+		"employeecreated": "Ny medarbejder oprettet",
 		"employeedeleted": "Medarbejder slettet",
+		"employeeupdated": "Medarbejder opdateret",
 		"success": "Succes",
 		"usercreated": "Ny bruger oprettet",
 		"userdeleted": "Bruger slettet",

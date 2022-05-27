@@ -132,6 +132,40 @@
                 <name>employees</name>
                 <children>
                     <concept_node>
+                        <name>birthdate</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>hiringdate</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>jobtitle</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
@@ -166,7 +200,58 @@
                         </translations>
                     </concept_node>
                     <concept_node>
+                        <name>sickdays</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>title</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>vacationdays</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>vacationdaysleft</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>
@@ -315,7 +400,41 @@
                 <name>success</name>
                 <children>
                     <concept_node>
+                        <name>employeecreated</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>employeedeleted</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>da-DK</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
+                        <name>employeeupdated</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>

@@ -7,6 +7,8 @@ export interface Employee {
   jobTitle: number;
   birthDate: Date;
   hiringDate: Date;
+  birthDateString: String;
+  hiringDateString: String;
   salary: number;
   vacationDays: number;
   vacationDaysLeft: number;

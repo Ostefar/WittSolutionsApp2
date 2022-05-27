@@ -44,10 +44,6 @@ export class UsersOverviewComponent implements OnInit {
     this.reload();
   }
 
-  UpdateUser()
-  {
-  }
-
   reload() {
     setTimeout(() => { this.router.navigateByUrl('/'); }, 1900);
     setTimeout(() => { this.router.navigateByUrl('/users-overview'); }, 2000);

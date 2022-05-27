@@ -11,10 +11,13 @@
 	},
 	"employees": {
 		"birthdate": "Birth date",
+		"consultent": "Freelance consultant",
+		"fulltime": "Full time employee",
 		"hiringdate": "Hiring date",
 		"jobtitle": "Job title",
 		"salary": "Hourly salary",
 		"sickdays": "Sick days",
+		"student": "Student helper",
 		"title": "Employees",
 		"vacationdays": "Vacation days",
 		"vacationdaysleft": "Vacation days left"

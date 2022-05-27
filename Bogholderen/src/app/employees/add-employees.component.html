@@ -44,14 +44,18 @@
 
       <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
-          <input id="JobTitle" type="text" formControlName="JobTitle" class="form-control" placeholder="{{ 'employees.jobtitle' | translate}}">
+          <label for="JobTitle">{{ 'employees.jobtitle' | translate}}</label>
+          <select formControlName="JobTitle" id="JobTitle" class="form-control">
+            <option value="1">{{ 'employees.consultent' | translate}}</option>
+            <option value="2">{{ 'employees.student' | translate}}</option>
+            <option value="3">{{ 'employees.fulltime' | translate}}</option>
+          </select>
           <div *ngIf="jobTitle?.invalid && (jobTitle?.dirty || jobTitle?.touched)" class="alert alert-danger">
             <div *ngIf="jobTitle?.errors">
               {{ 'employees.jobtitle' | translate}} {{ 'shared.required' | translate}}
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="d-flex flex-row">

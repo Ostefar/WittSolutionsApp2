@@ -11,10 +11,13 @@
 	},
 	"employees": {
 		"birthdate": "Fødsels dato",
+		"consultent": "Freelance konsulent",
+		"fulltime": "Fast ansat",
 		"hiringdate": "Ansættelses dato",
 		"jobtitle": "Stilling",
 		"salary": "Timeløn",
 		"sickdays": "Sygedage",
+		"student": "Studenter medhjælper",
 		"title": "Medarbejdere",
 		"vacationdays": "Ferie dage",
 		"vacationdaysleft": "Ferie dage tilbage"

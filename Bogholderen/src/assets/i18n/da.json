@@ -37,6 +37,13 @@
 		"title": "Management"
 	},
 	"projects": {
+		"deadlinedate": "Deadline",
+		"estimatedhours": "Est. timer",
+		"hourprice": "Time pris",
+		"hoursspend": "Timer brugt",
+		"projectname": "Projektnavn",
+		"projectprice": "Projekt pris",
+		"startdate": "Start dato",
 		"title": "Projekter"
 	},
 	"shared": {
@@ -49,6 +56,9 @@
 		"employeecreated": "Ny medarbejder oprettet",
 		"employeedeleted": "Medarbejder slettet",
 		"employeeupdated": "Medarbejder opdateret",
+		"projectcreated": "Projekt oprettet",
+		"projectdeleted": "Projekt slettet",
+		"projectupdated": "Projekt opdateret",
 		"success": "Succes",
 		"usercreated": "Ny bruger oprettet",
 		"userdeleted": "Bruger slettet",

@@ -37,6 +37,13 @@
 		"title": "Management"
 	},
 	"projects": {
+		"deadlinedate": "Deadline",
+		"estimatedhours": "Est. hours",
+		"hourprice": "Hour price",
+		"hoursspend": "Hours spend",
+		"projectname": "Project name",
+		"projectprice": "Project price",
+		"startdate": "Start date",
 		"title": "Projects"
 	},
 	"shared": {
@@ -49,6 +56,9 @@
 		"employeecreated": "New employee created",
 		"employeedeleted": "Employee deleted",
 		"employeeupdated": "Employee updated",
+		"projectcreated": "Project created",
+		"projectdeleted": "Project deleted",
+		"projectupdated": "Project updated",
 		"success": "Success",
 		"usercreated": "New user created",
 		"userdeleted": "User deleted",

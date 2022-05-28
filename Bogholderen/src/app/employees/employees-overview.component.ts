@@ -39,7 +39,7 @@ export class EmployeesOverviewComponent implements OnInit {
   {
     this.employeeService.delete(id).subscribe(res => {
       this.showToasterSuccess();
-      console.log('User deleted successfully!');
+      console.log('Employee deleted successfully!');
     })
     this.reload();
   }

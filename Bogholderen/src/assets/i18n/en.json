@@ -7,7 +7,10 @@
 		"zipcode": "Zip code"
 	},
 	"customers": {
-		"title": "Customers"
+		"companyname": "Company name",
+		"contactperson": "Contact person",
+		"title": "Customers",
+		"websiteurl": "Website "
 	},
 	"employees": {
 		"birthdate": "Birth date",
@@ -39,6 +42,9 @@
 		"required": "is required"
 	},
 	"success": {
+		"customercreated": "Customer created",
+		"customerdeleted": "Customer deleted",
+		"customerupdated": "Customer updated",
 		"employeecreated": "New employee created",
 		"employeedeleted": "Employee deleted",
 		"employeeupdated": "Employee updated",

@@ -18,6 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { EmployeesOverviewComponent } from './employees/employees-overview.component';
 import { AddEmployeesComponent } from './employees/add-employees.component';
 import { UpdateEmployeesComponent } from './employees/update-employees.component';
+import { CustomersOverviewComponent } from './customers/customers-overview.component';
 
 
 
@@ -32,6 +33,7 @@ import { UpdateEmployeesComponent } from './employees/update-employees.component
     UpdateUsersComponent,
     AddEmployeesComponent,
     UpdateEmployeesComponent,
+    CustomersOverviewComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,6 +64,7 @@ import { UpdateEmployeesComponent } from './employees/update-employees.component
       { path: 'employees-overview', component: EmployeesOverviewComponent },
       { path: 'add-employees', component: AddEmployeesComponent },
       { path: 'update-employees/:id', component: UpdateEmployeesComponent },
+      { path: 'customers-overview', component: CustomersOverviewComponent },
     ])
   ],
   providers: [],

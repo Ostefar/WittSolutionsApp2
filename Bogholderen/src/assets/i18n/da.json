@@ -7,7 +7,10 @@
 		"zipcode": "Post nr."
 	},
 	"customers": {
-		"title": "Kunder"
+		"companyname": "Firmanavn",
+		"contactperson": "Kontaktperson",
+		"title": "Kunder",
+		"websiteurl": "Hjemmeside"
 	},
 	"employees": {
 		"birthdate": "Fødsels dato",
@@ -39,6 +42,9 @@
 		"required": "skal udfyldes"
 	},
 	"success": {
+		"customercreated": "Kunde oprettet",
+		"customerdeleted": "Kunde slettet",
+		"customerupdated": "Kunde opdateret",
 		"employeecreated": "Ny medarbejder oprettet",
 		"employeedeleted": "Medarbejder slettet",
 		"employeeupdated": "Medarbejder opdateret",

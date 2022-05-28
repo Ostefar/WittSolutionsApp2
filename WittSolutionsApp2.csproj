@@ -31,7 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Bogholderen\src\app\customers\Customer.ts" />
     <None Remove="Bogholderen\src\app\employees\Employee.ts" />
+    <None Remove="Bogholderen\src\app\service\customer.service.ts" />
     <None Remove="Bogholderen\src\app\service\employee.service.ts" />
     <None Remove="Bogholderen\src\app\service\notification-service.ts" />
     <None Remove="Bogholderen\src\app\service\user.service.ts" />
@@ -39,9 +41,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="Bogholderen\src\app\customers\Customer.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Bogholderen\src\app\employees\Employee.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Bogholderen\src\app\service\customer.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\employee.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\notification-service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\user.service.ts" />
@@ -49,7 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Bogholderen\src\app\customers\" />
     <Folder Include="Bogholderen\src\app\management\" />
     <Folder Include="Bogholderen\src\app\projects\" />
   </ItemGroup>

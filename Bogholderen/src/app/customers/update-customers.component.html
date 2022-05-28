@@ -1,0 +1,136 @@
+<div>
+  <form [formGroup]="updateCustomerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="CompanyName">{{ 'users.firstname' | translate}}</label>
+          <input id="CompanyName" type="text" formControlName="CompanyName" class="form-control" placeholder="{{ 'customers.companyname' | translate}}">
+          <div *ngIf="companyName?.invalid && (companyName?.dirty || companyName?.touched)" class="alert alert-danger">
+            <div *ngIf="companyName?.errors">
+              {{ 'customers.companyname' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="WebsiteUrl">{{ 'users.lastname' | translate}}</label>
+          <input id="WebsiteUrl" type="text" formControlName="WebsiteUrl" class="form-control" placeholder="{{ 'customers.websiteurl' | translate}}">
+          <div *ngIf="websiteUrl?.invalid && (websiteUrl?.dirty || websiteUrl?.touched)" class="alert alert-danger">
+            <div *ngIf="websiteUrl?.errors">
+              {{ 'customers.websiteurl' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="ContactPersonName">{{ 'customers.contactperson' | translate}}</label>
+          <input id="ContactPersonName" type="text" formControlName="ContactPersonName" class="form-control" placeholder="{{ 'customers.contactperson' | translate}}">
+          <div *ngIf="contactPersonName?.invalid && (contactPersonName?.dirty || contactPersonName?.touched)" class="alert alert-danger">
+            <div *ngIf="contactPersonName?.errors">
+              {{ 'customers.contactperson' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="VatNumber">{{ 'customers.vatnumber' | translate}}</label>
+          <input id="VatNumber" type="text" formControlName="VatNumber" class="form-control" placeholder="{{ 'customers.vatnumber' | translate}}">
+          <div *ngIf="vatNumber?.invalid && (vatNumber?.dirty || vatNumber?.touched)" class="alert alert-danger">
+            <div *ngIf="vatNumber?.errors">
+              {{ 'customers.vatnumber' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="Phone">{{ 'users.phone' | translate}}</label>
+          <input id="Phone" type="number" formControlName="Phone" class="form-control" placeholder="{{ 'users.phone' | translate}}">
+          <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="alert alert-danger">
+            <div *ngIf="phone?.errors">
+              {{ 'users.phone' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="Email">{{ 'users.email' | translate}}</label>
+          <input id="Email" type="text" formControlName="Email" class="form-control" placeholder="{{ 'users.email' | translate}}">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+            <div *ngIf="email?.errors">
+              {{ 'users.email' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="AddressLine1">{{ 'address.addressline1' | translate}}</label>
+          <input id="AddressLine1" type="text" formControlName="AddressLine1" class="form-control" placeholder="{{ 'address.addressline1' | translate}}">
+          <div *ngIf="addressLine1?.invalid && (addressLine1?.dirty || addressLine1?.touched)" class="alert alert-danger">
+            <div *ngIf="addressLine1?.errors">
+              {{ 'address.addressline1' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="AddressLine2">{{ 'address.addressline2' | translate}}</label>
+          <input id="AddressLine2" type="text" formControlName="AddressLine2" class="form-control" placeholder="{{ 'address.addressline2' | translate}}">
+          <div *ngIf="addressLine2?.invalid && (addressLine2?.dirty || addressLine2?.touched)" class="alert alert-danger">
+            <div *ngIf="addressLine2?.errors">
+              {{ 'address.addressline2' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="Country">{{ 'address.country' | translate}}</label>
+          <input id="Country" type="text" formControlName="Country" class="form-control" placeholder="{{ 'address.country' | translate}}">
+          <div *ngIf="country?.invalid && (country?.dirty || country?.touched)" class="alert alert-danger">
+            <div *ngIf="country?.errors">
+              {{ 'address.country' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 col-md-2">
+          <label for="City">{{ 'address.city' | translate}}</label>
+          <input id="City" type="text" formControlName="City" class="form-control" placeholder="{{ 'address.city' | translate}}">
+          <div *ngIf="city?.invalid && (city?.dirty || city?.touched)" class="alert alert-danger">
+            <div *ngIf="city?.errors">
+              {{ 'address.city' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="ZipCode">{{ 'address.zipcode' | translate}}</label>
+          <input id="ZipCode" type="text" formControlName="ZipCode" class="form-control" placeholder="{{ 'address.zipcode' | translate}}">
+          <div *ngIf="zipCode?.invalid && (zipCode?.dirty || zipCode?.touched)" class="alert alert-danger">
+            <div *ngIf="zipCode?.errors">
+              {{ 'address.zipcode' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="d-flex flex-row">
+      <div class="p-2 col-md-2">
+        <button type="submit" [disabled]="updateCustomerForm.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+

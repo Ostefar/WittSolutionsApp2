@@ -14,7 +14,7 @@
 
         public string Email { get; set; }
 
-        public int VatNumber { get; set; }
+        public string VatNumber { get; set; }
 
         public string AddressLine1 { get; set; }
 

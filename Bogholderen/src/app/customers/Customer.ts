@@ -5,7 +5,7 @@ export interface Customer {
   contactPersonName: number;
   phone: number;
   email: string;
-  vatNumber: number;
+  vatNumber: string;
   addressLine1: string;
   addressLine2: string;
   country: string;

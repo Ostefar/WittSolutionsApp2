@@ -45,43 +45,38 @@ namespace WittSolutionsApp2.Controllers
             return Ok(result);
         }
 
-        /*
+        
         [HttpGet]
-        [Route("GetEmployeeBy{id}")]
+        [Route("GetCustomerBy{id}")]
         public IActionResult GetById(int id)
         {
-            var employee = _dbContext.Employees.Where(x => x.Id == id).FirstOrDefault();
-            var addressId = employee.AddressId;
+            var customer = _dbContext.Customers.Where(x => x.Id == id).FirstOrDefault();
+            var addressId = customer.AddressId;
             var address = _dbContext.Address.Where(x => x.Id == addressId).FirstOrDefault();
 
-            if (employee == null | address == null)
+            if (customer == null | address == null)
                 return NotFound();
 
-            AddEmployeeDTO employeeToEdit = new AddEmployeeDTO()
+            AddCustomerDTO customerToEdit = new AddCustomerDTO()
             {
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                Phone = employee.Phone,
-                Email = employee.Email,
-                JobTitle = employee.JobTitle,
-                BirthDateString = employee.BirthDate.ToString("yyyy-MM-dd"),
-                HiringDateString = employee.HiringDate.ToString("yyyy-MM-dd"),
-                Salary = employee.Salary,
-                VacationDays = employee.VacationDays,
-                VacationDaysLeft = employee.VacationDaysLeft,
-                SickDays = employee.SickDays,
+                CompanyName = customer.CompanyName,
+                WebsiteUrl = customer.WebsiteUrl,
+                ContactPersonName = customer.ContactPersonName,
+                Phone = customer.Phone,
+                Email = customer.Email,
+                VatNumber = customer.VatNumber,
                 AddressLine1 = address.AddressLine1,
                 AddressLine2 = address.AddressLine2,
                 Country = address.Country,
                 City = address.City,
                 ZipCode = address.ZipCode,
             };
-            return Ok(employeeToEdit);
+            return Ok(customerToEdit);
         }
 
         [HttpPost]
-        [Route("CreateEmployee")]
-        public async Task<IActionResult> Post(AddEmployeeDTO payload)
+        [Route("CreateCustomer")]
+        public async Task<IActionResult> Post(AddCustomerDTO payload)
         {
             if (payload is not null)
             {
@@ -94,23 +89,18 @@ namespace WittSolutionsApp2.Controllers
                     ZipCode = payload.ZipCode
                 };
 
-                Employees newEmployeeData = new Employees()
+                Customers newCustomerData = new Customers()
                 {
-                    FirstName = payload.FirstName,
-                    LastName = payload.LastName,
+                    CompanyName = payload.CompanyName,
+                    WebsiteUrl = payload.WebsiteUrl,
+                    ContactPersonName = payload.ContactPersonName,
                     Phone = payload.Phone,
                     Email = payload.Email,
-                    JobTitle = payload.JobTitle,
-                    BirthDate = payload.BirthDate,
-                    HiringDate = payload.HiringDate,
-                    Salary = payload.Salary,
-                    VacationDays = payload.VacationDays,
-                    VacationDaysLeft = payload.VacationDaysLeft,
-                    SickDays = payload.SickDays,
+                    VatNumber = payload.VatNumber,
                     Address = newAddressData,
                 };
 
-                _dbContext.Employees.Add(newEmployeeData);
+                _dbContext.Customers.Add(newCustomerData);
                 await _dbContext.SaveChangesAsync();
                 return Ok(payload);
             }
@@ -119,31 +109,32 @@ namespace WittSolutionsApp2.Controllers
                 return BadRequest(payload);
             }
         }
-
+        
+         
         [HttpDelete]
-        [Route("DeleteEmployee{id}")]
+        [Route("DeleteCustomer{id}")]
         public void DeleteEmployee(int id)
         {
-            var employee = _dbContext.Employees.Where(x => x.Id == id).FirstOrDefault();
-            var addressId = employee.AddressId;
+            var customer = _dbContext.Customers.Where(x => x.Id == id).FirstOrDefault();
+            var addressId = customer.AddressId;
 
 
-            _dbContext.Employees.Remove(_dbContext.Employees.FirstOrDefault(x => x.Id == id));
+            _dbContext.Customers.Remove(_dbContext.Customers.FirstOrDefault(x => x.Id == id));
             _dbContext.Address.Remove(_dbContext.Address.FirstOrDefault(x => x.Id == addressId));
             _dbContext.SaveChanges();
 
         }
 
         [HttpPut]
-        [Route("UpdateEmployee{id}")]
-        public async Task<IActionResult> UpdateEmployee(AddEmployeeDTO payload)
+        [Route("UpdateCustomer{id}")]
+        public async Task<IActionResult> UpdateCustomer(AddCustomerDTO payload)
         {
-            var employee = _dbContext.Employees
+            var customer = _dbContext.Customers
             .Where(x => x.Id == payload.Id)
             .Include(x => x.Address)
             .SingleOrDefault();
 
-            var addressId = employee.AddressId;
+            var addressId = customer.AddressId;
 
             var address = _dbContext.Address.Where(x => x.Id == addressId).SingleOrDefault();
 
@@ -159,24 +150,19 @@ namespace WittSolutionsApp2.Controllers
                     ZipCode = payload.ZipCode
                 };
 
-                Employees employeeData = new Employees()
+                Customers customerData = new Customers()
                 {
                     Id = payload.Id,
-                    FirstName = payload.FirstName,
-                    LastName = payload.LastName,
+                    CompanyName = payload.CompanyName,
+                    WebsiteUrl = payload.WebsiteUrl,
+                    ContactPersonName = payload.ContactPersonName,
                     Phone = payload.Phone,
                     Email = payload.Email,
-                    JobTitle = payload.JobTitle,
-                    BirthDate = payload.BirthDate,
-                    HiringDate = payload.HiringDate,
-                    Salary = payload.Salary,
-                    VacationDays = payload.VacationDays,
-                    VacationDaysLeft = payload.VacationDaysLeft,
-                    SickDays = payload.SickDays,
+                    VatNumber = payload.VatNumber,
                     AddressId = addressId,
                     Address = addressData,
                 };
-                _dbContext.Entry(employee).CurrentValues.SetValues(employeeData);
+                _dbContext.Entry(customer).CurrentValues.SetValues(customerData);
                 _dbContext.Entry(address).CurrentValues.SetValues(addressData);
                 await _dbContext.SaveChangesAsync();
                 return Ok(payload);
@@ -185,6 +171,6 @@ namespace WittSolutionsApp2.Controllers
             {
                 return BadRequest(payload);
             }
-        } */
+        } 
     }
 }

@@ -8,8 +8,9 @@
 	},
 	"customers": {
 		"companyname": "Firmanavn",
-		"contactperson": "Kontaktperson",
+		"contactperson": "Kontakt person",
 		"title": "Kunder",
+		"vatnumber": "CVR nr",
 		"websiteurl": "Hjemmeside"
 	},
 	"employees": {

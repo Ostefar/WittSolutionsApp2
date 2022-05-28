@@ -19,6 +19,8 @@ import { EmployeesOverviewComponent } from './employees/employees-overview.compo
 import { AddEmployeesComponent } from './employees/add-employees.component';
 import { UpdateEmployeesComponent } from './employees/update-employees.component';
 import { CustomersOverviewComponent } from './customers/customers-overview.component';
+import { AddCustomersComponent } from './customers/add-customers.component';
+import { UpdateCustomersComponent } from './customers/update-customers.component';
 
 
 
@@ -34,6 +36,8 @@ import { CustomersOverviewComponent } from './customers/customers-overview.compo
     AddEmployeesComponent,
     UpdateEmployeesComponent,
     CustomersOverviewComponent,
+    AddCustomersComponent,
+    UpdateCustomersComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -65,6 +69,9 @@ import { CustomersOverviewComponent } from './customers/customers-overview.compo
       { path: 'add-employees', component: AddEmployeesComponent },
       { path: 'update-employees/:id', component: UpdateEmployeesComponent },
       { path: 'customers-overview', component: CustomersOverviewComponent },
+      { path: 'add-customers', component: AddCustomersComponent },
+      { path: 'update-customers/:id', component: UpdateCustomersComponent },
+
     ])
   ],
   providers: [],

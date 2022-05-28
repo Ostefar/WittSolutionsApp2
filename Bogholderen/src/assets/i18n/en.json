@@ -10,6 +10,7 @@
 		"companyname": "Company name",
 		"contactperson": "Contact person",
 		"title": "Customers",
+		"vatnumber": "Vat number",
 		"websiteurl": "Website "
 	},
 	"employees": {

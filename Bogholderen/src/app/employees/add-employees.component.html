@@ -105,7 +105,7 @@
         <input id="SickDays" type="text" formControlName="SickDays" class="form-control" placeholder="{{ 'employees.sickdays' | translate}}">
         <div *ngIf="sickDays?.invalid && (sickDays?.dirty || sickDays?.touched)" class="alert alert-danger">
           <div *ngIf="sickDays?.errors">
-            {{ 'employees.Sickdays' | translate}} {{ 'shared.required' | translate}}
+            {{ 'employees.sickdays' | translate}} {{ 'shared.required' | translate}}
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
         <input id="Salary" type="text" formControlName="Salary" class="form-control" placeholder="{{ 'employees.salary' | translate}}">
         <div *ngIf="salary?.invalid && (salary?.dirty || salary?.touched)" class="alert alert-danger">
           <div *ngIf="salary?.errors">
-            {{ 'employees.hirinsalarygdate' | translate}} {{ 'shared.required' | translate}}
+            {{ 'employees.salary' | translate}} {{ 'shared.required' | translate}}
           </div>
         </div>
       </div>

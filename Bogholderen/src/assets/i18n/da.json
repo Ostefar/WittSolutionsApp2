@@ -37,10 +37,13 @@
 		"title": "Management"
 	},
 	"projects": {
+		"customer": "Kunde",
 		"deadlinedate": "Deadline",
+		"employee": "Medarbejder",
 		"estimatedhours": "Est. timer",
 		"hourprice": "Time pris",
 		"hoursspend": "Timer brugt",
+		"note": "Beskrivelse",
 		"projectname": "Projektnavn",
 		"projectprice": "Projekt pris",
 		"startdate": "Start dato",

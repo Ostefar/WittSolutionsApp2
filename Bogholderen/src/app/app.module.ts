@@ -22,6 +22,7 @@ import { CustomersOverviewComponent } from './customers/customers-overview.compo
 import { AddCustomersComponent } from './customers/add-customers.component';
 import { UpdateCustomersComponent } from './customers/update-customers.component';
 import { ProjectsOverviewComponent } from './projects/projects-overview.component';
+import { AddProjectsComponent } from './projects/add-projects.component';
 
 
 
@@ -40,6 +41,7 @@ import { ProjectsOverviewComponent } from './projects/projects-overview.componen
     AddCustomersComponent,
     UpdateCustomersComponent,
     ProjectsOverviewComponent,
+    AddProjectsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -74,6 +76,7 @@ import { ProjectsOverviewComponent } from './projects/projects-overview.componen
       { path: 'add-customers', component: AddCustomersComponent },
       { path: 'update-customers/:id', component: UpdateCustomersComponent },
       { path: 'projects-overview', component: ProjectsOverviewComponent },
+      { path: 'add-projects', component: AddProjectsComponent },
 
     ])
   ],

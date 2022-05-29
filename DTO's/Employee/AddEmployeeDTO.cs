@@ -1,4 +1,4 @@
-﻿namespace WittSolutionsApp2.DTO_s.User
+﻿namespace WittSolutionsApp2.DTO_s.Employee
 {
     public class AddEmployeeDTO { 
 

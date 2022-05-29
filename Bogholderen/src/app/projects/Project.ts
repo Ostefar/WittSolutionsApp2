@@ -10,12 +10,7 @@ export interface Project {
   hourPrice: number;
   projectPrice: number;
   hoursSpend: number;
-  addressLine1: string;
-  addressLine2: string;
-  country: string;
-  city: string;
-  zipCode: string;
-
-
+  customerId: number;
+  employeeId: number;
 
 }

@@ -16,7 +16,7 @@ export class ProjectService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get(this.APIUrl + '/ViewCustomers')
+    return this.http.get(this.APIUrl + '/ViewProjects')
   }
 
   create(payload: Project) {

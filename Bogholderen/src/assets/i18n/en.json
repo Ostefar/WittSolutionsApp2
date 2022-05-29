@@ -37,10 +37,13 @@
 		"title": "Management"
 	},
 	"projects": {
+		"customer": "Customer",
 		"deadlinedate": "Deadline",
+		"employee": "Employee",
 		"estimatedhours": "Est. hours",
 		"hourprice": "Hour price",
 		"hoursspend": "Hours spend",
+		"note": "Description",
 		"projectname": "Project name",
 		"projectprice": "Project price",
 		"startdate": "Start date",

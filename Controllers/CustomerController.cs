@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WittSolutionsApp2.Data;
-using WittSolutionsApp2.DTO_s.User;
+using WittSolutionsApp2.DTO_s.Customer;
 using WittSolutionsApp2.Models;
 
 namespace WittSolutionsApp2.Controllers

@@ -26,6 +26,7 @@ import { AddProjectsComponent } from './projects/add-projects.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { UpdateProjectsComponent } from './projects/update-projects.component';
 import { ManagementOverviewComponent } from './management/management-overview.component';
+import { RegistrateHoursComponent } from './projects/registrate-hours.component';
 
 
 
@@ -47,6 +48,7 @@ import { ManagementOverviewComponent } from './management/management-overview.co
     AddProjectsComponent,
     UpdateProjectsComponent,
     ManagementOverviewComponent,
+    RegistrateHoursComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -67,7 +69,6 @@ import { ManagementOverviewComponent } from './management/management-overview.co
       preventDuplicates: true,
     }),
     BrowserAnimationsModule,
-    //NbLayoutComponent,
     NbTabsetModule,
     DropDownListModule,
     RouterModule.forRoot([
@@ -85,6 +86,7 @@ import { ManagementOverviewComponent } from './management/management-overview.co
       { path: 'add-projects', component: AddProjectsComponent },
       { path: 'update-projects/:id', component: UpdateProjectsComponent },
       { path: 'management-overview', component: ManagementOverviewComponent },
+      { path: 'registrate-hours/:id', component: RegistrateHoursComponent },
 
     ])
   ],

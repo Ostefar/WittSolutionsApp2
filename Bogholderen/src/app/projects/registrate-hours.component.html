@@ -1,0 +1,46 @@
+<div>
+  <form [formGroup]="registrateHoursForm" (ngSubmit)="onSubmit()">
+    <div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <input id="HoursToRegistrate" type="text" formControlName="HoursToRegistrate" class="form-control" placeholder="{{ 'projects.hourstoregistrate' | translate}}">
+          <div *ngIf="hoursToRegistrate?.invalid && (hoursToRegistrate?.dirty || hoursToRegistrate?.touched)" class="alert alert-danger">
+            <div *ngIf="hoursToRegistrate?.errors">
+              {{ 'projects.hourstoregistrate' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <label for="RegistrationDate">{{ 'projects.startdate' | translate}}</label>
+          <input id="RegistrationDate" type="Date" formControlName="RegistrationDate" class="form-control" placeholder="{{ 'projects.registrationdate' | translate}}">
+          <div *ngIf="registrationDate?.invalid && (registrationDate?.dirty || registrationDate?.touched)" class="alert alert-danger">
+            <div *ngIf="registrationDate?.errors">
+              {{ 'projects.registrationdate' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <textarea id="Note" type="text" formControlName="Note" class="form-control" rows="4" cols="50" placeholder="{{ 'projects.note' | translate}}">
+          </textarea>
+          <div *ngIf="note?.invalid && (note?.dirty || note?.touched)" class="alert alert-danger">
+            <div *ngIf="note?.errors">
+              {{ 'projects.note' | translate}} {{ 'shared.required' | translate}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="d-flex flex-row">
+        <div class="p-2 col-md-2">
+          <button type="submit" [disabled]="registrateHoursForm.invalid" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+</form>
+</div>
+

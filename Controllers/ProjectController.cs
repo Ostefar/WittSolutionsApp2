@@ -59,6 +59,22 @@ namespace WittSolutionsApp2.Controllers
 
             return Ok(result);
         }
+        [HttpGet]
+        [Route("GetAllProjectNames")]
+        public async Task<IActionResult> GetAllProjectNames()
+        {
+
+            var result = (from project in _dbContext.Projects
+                          select new
+                          {
+                              Id = project.Id,
+                              ProjectName = project.ProjectName,
+
+                          }).ToList();
+
+            return Ok(result);
+        }
+
 
         [HttpGet]
         [Route("GetAllCustomerNames")]

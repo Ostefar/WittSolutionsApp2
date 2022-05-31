@@ -1,8 +1,9 @@
 <div>
-  <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="updateProjectForm" (ngSubmit)="onSubmit()">
     <div>
       <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
+          <label for="ProjectName">{{ 'projects.projectname' | translate}}</label>
           <input id="ProjectName" type="text" formControlName="ProjectName" class="form-control" placeholder="{{ 'projects.projectname' | translate}}">
           <div *ngIf="projectName?.invalid && (projectName?.dirty || projectName?.touched)" class="alert alert-danger">
             <div *ngIf="projectName?.errors">
@@ -12,6 +13,7 @@
         </div>
 
         <div class="p-2 col-md-2">
+          <label for="Note">{{ 'projects.note' | translate}}</label>
           <input id="Note" type="text" formControlName="Note" class="form-control" placeholder="{{ 'projects.note' | translate}}">
           <div *ngIf="note?.invalid && (note?.dirty || note?.touched)" class="alert alert-danger">
             <div *ngIf="note?.errors">
@@ -45,6 +47,7 @@
 
       <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
+          <label for="EstimatedHours">{{ 'projects.estimatedhours' | translate}}</label>
           <input id="EstimatedHours" type="number" formControlName="EstimatedHours" class="form-control" placeholder="{{ 'projects.estimatedhours' | translate}}">
           <div *ngIf="estimatedHours?.invalid && (estimatedHours?.dirty || estimatedHours?.touched)" class="alert alert-danger">
             <div *ngIf="estimatedHours?.errors">
@@ -54,6 +57,7 @@
         </div>
 
         <div class="p-2 col-md-2">
+          <label for="HourPrice">{{ 'projects.hourprice' | translate}}</label>
           <input id="HourPrice" type="text" formControlName="HourPrice" class="form-control" placeholder="{{ 'projects.hourprice' | translate}}">
           <div *ngIf="hourPrice?.invalid && (hourPrice?.dirty || hourPrice?.touched)" class="alert alert-danger">
             <div *ngIf="hourPrice?.errors">
@@ -65,6 +69,7 @@
 
       <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
+          <label for="ProjectPrice">{{ 'projects.projectprice' | translate}}</label>
           <input id="ProjectPrice" type="number" formControlName="ProjectPrice" class="form-control" placeholder="{{ 'projects.projectprice' | translate}}">
           <div *ngIf="projectPrice?.invalid && (projectPrice?.dirty || projectPrice?.touched)" class="alert alert-danger">
             <div *ngIf="projectPrice?.errors">
@@ -74,6 +79,7 @@
         </div>
 
         <div class="p-2 col-md-2">
+          <label for="HoursSpend">{{ 'projects.hoursspend' | translate}}</label>
           <input id="HoursSpend" type="text" formControlName="HoursSpend" class="form-control" placeholder="{{ 'projects.hoursspend' | translate}}">
           <div *ngIf="hoursSpend?.invalid && (hoursSpend?.dirty || hoursSpend?.touched)" class="alert alert-danger">
             <div *ngIf="hoursSpend?.errors">
@@ -116,7 +122,7 @@
       <br />
       <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
-          <button type="submit" [disabled]="addProjectForm.invalid" class="btn btn-primary">Submit</button>
+          <button type="submit" [disabled]="updateProjectForm.invalid" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>

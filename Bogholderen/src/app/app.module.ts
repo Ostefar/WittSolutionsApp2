@@ -23,6 +23,8 @@ import { AddCustomersComponent } from './customers/add-customers.component';
 import { UpdateCustomersComponent } from './customers/update-customers.component';
 import { ProjectsOverviewComponent } from './projects/projects-overview.component';
 import { AddProjectsComponent } from './projects/add-projects.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { UpdateProjectsComponent } from './projects/update-projects.component';
 
 
 
@@ -42,6 +44,7 @@ import { AddProjectsComponent } from './projects/add-projects.component';
     UpdateCustomersComponent,
     ProjectsOverviewComponent,
     AddProjectsComponent,
+    UpdateProjectsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -64,6 +67,7 @@ import { AddProjectsComponent } from './projects/add-projects.component';
     BrowserAnimationsModule,
     
     NbTabsetModule,
+    DropDownListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'users-overview', component: UsersOverviewComponent },
@@ -77,6 +81,7 @@ import { AddProjectsComponent } from './projects/add-projects.component';
       { path: 'update-customers/:id', component: UpdateCustomersComponent },
       { path: 'projects-overview', component: ProjectsOverviewComponent },
       { path: 'add-projects', component: AddProjectsComponent },
+      { path: 'update-projects/:id', component: UpdateProjectsComponent },
 
     ])
   ],

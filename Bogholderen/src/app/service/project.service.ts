@@ -19,6 +19,14 @@ export class ProjectService {
     return this.http.get(this.APIUrl + '/ViewProjects')
   }
 
+  getCustomers(): Observable<any> {
+    return this.http.get(this.APIUrl + '/GetAllCustomerNames')
+  }
+  getEmployees(): Observable<any> {
+    return this.http.get(this.APIUrl + '/GetAllEmployeeNames')
+  }
+
+
   create(payload: Project) {
     return this.http.post<Project>(this.APIUrl + '/CreateProject', payload
     );

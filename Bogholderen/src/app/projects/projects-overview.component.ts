@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProjectsOverviewComponent implements OnInit {
 
-  //to hold employees info from db
+  //to hold project info from db
   projects: Project[] = [];
 
   constructor(public fb: FormBuilder, private projectService: ProjectService, private http: HttpClient, private router: Router, private notifyService: NotificationService, private translate: TranslateService) {

@@ -12,6 +12,12 @@
 
         public DateTime DeadlineDate { get; set; }
 
+        public string StartDateString { get; set; }
+
+        public string DeadlineDateString { get; set; }
+
+
+
         public int EstimatedHours { get; set; }
         public int HourPrice { get; set; }
         public int ProjectPrice { get; set; }

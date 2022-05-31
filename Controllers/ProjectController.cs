@@ -29,8 +29,8 @@ namespace WittSolutionsApp2.Controllers
                           {
                               Id = project.Id,
                               ProjectName = project.ProjectName,
-                              StartDate = project.StartDate,
-                              DeadlineDate = project.DeadlineDate,
+                              StartDate = project.StartDate.ToShortDateString(),
+                              DeadlineDate = project.DeadlineDate.ToShortDateString(),
                               EstimatedHours = project.EstimatedHours,
                               HourPrice = project.HourPrice,
                               ProjectPrice = project.ProjectPrice,
@@ -90,8 +90,8 @@ namespace WittSolutionsApp2.Controllers
             {
                 ProjectName = project.ProjectName,
                 Note = project.Note,
-                StartDate = project.StartDate,
-                DeadlineDate = project.DeadlineDate,
+                StartDateString = project.StartDate.ToString("yyyy-MM-dd"),
+                DeadlineDateString = project.StartDate.ToString("yyyy-MM-dd"),
                 EstimatedHours = project.EstimatedHours,
                 HourPrice = project.HourPrice,
                 ProjectPrice = project.ProjectPrice,
@@ -122,9 +122,6 @@ namespace WittSolutionsApp2.Controllers
                     EmployeeId = payload.EmployeeId,
                 };
 
-                // failer fordi customerid og empoyeeid 1 ikke eksistere. tilføj evt også customer/employee field og hent/udfyld
-                // dataen fra databasen til disse felter
-
                 _dbContext.Projects.Add(newProjectData);
                 await _dbContext.SaveChangesAsync();
                 return Ok(payload);
@@ -135,60 +132,42 @@ namespace WittSolutionsApp2.Controllers
             }
         }
         
-         /*
+         
         [HttpDelete]
-        [Route("DeleteCustomer{id}")]
-        public void DeleteEmployee(int id)
+        [Route("DeleteProject{id}")]
+        public void DeleteProject(int id)
         {
-            var customer = _dbContext.Customers.Where(x => x.Id == id).FirstOrDefault();
-            var addressId = customer.AddressId;
+            var project = _dbContext.Projects.Where(x => x.Id == id).FirstOrDefault();
 
-
-            _dbContext.Customers.Remove(_dbContext.Customers.FirstOrDefault(x => x.Id == id));
-            _dbContext.Address.Remove(_dbContext.Address.FirstOrDefault(x => x.Id == addressId));
+            _dbContext.Projects.Remove(project);
             _dbContext.SaveChanges();
 
         }
 
         [HttpPut]
-        [Route("UpdateCustomer{id}")]
-        public async Task<IActionResult> UpdateCustomer(AddCustomerDTO payload)
+        [Route("UpdateProject{id}")]
+        public async Task<IActionResult> UpdateProject(AddProjectDTO payload)
         {
-            var customer = _dbContext.Customers
-            .Where(x => x.Id == payload.Id)
-            .Include(x => x.Address)
-            .SingleOrDefault();
-
-            var addressId = customer.AddressId;
-
-            var address = _dbContext.Address.Where(x => x.Id == addressId).SingleOrDefault();
+            var project = _dbContext.Projects.Where(x => x.Id == payload.Id).FirstOrDefault();
 
             if (payload is not null)
             {
-                Address addressData = new Address()
-                {
-                    Id = addressId,
-                    AddressLine1 = payload.AddressLine1,
-                    AddressLine2 = payload.AddressLine2,
-                    Country = payload.Country,
-                    City = payload.City,
-                    ZipCode = payload.ZipCode
-                };
-
-                Customers customerData = new Customers()
+                Projects projectData = new Projects()
                 {
                     Id = payload.Id,
-                    CompanyName = payload.CompanyName,
-                    WebsiteUrl = payload.WebsiteUrl,
-                    ContactPersonName = payload.ContactPersonName,
-                    Phone = payload.Phone,
-                    Email = payload.Email,
-                    VatNumber = payload.VatNumber,
-                    AddressId = addressId,
-                    Address = addressData,
+                    ProjectName = payload.ProjectName,
+                    Note = payload.Note,
+                    StartDate = payload.StartDate,
+                    DeadlineDate = payload.DeadlineDate,
+                    EstimatedHours = payload.EstimatedHours,
+                    HourPrice = payload.HourPrice,
+                    ProjectPrice = payload.ProjectPrice,
+                    HoursSpend = payload.HoursSpend,
+                    CustomerId = payload.CustomerId,
+                    EmployeeId = payload.EmployeeId
+
                 };
-                _dbContext.Entry(customer).CurrentValues.SetValues(customerData);
-                _dbContext.Entry(address).CurrentValues.SetValues(addressData);
+                _dbContext.Entry(project).CurrentValues.SetValues(projectData);
                 await _dbContext.SaveChangesAsync();
                 return Ok(payload);
             }
@@ -196,6 +175,6 @@ namespace WittSolutionsApp2.Controllers
             {
                 return BadRequest(payload);
             }
-        } */
+        } 
     }
 }

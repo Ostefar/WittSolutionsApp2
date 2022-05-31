@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Customer } from '../customers/Customer';
+import { Employee } from '../employees/Employee';
 import { NotificationService } from '../service/notification-service';
 import { ProjectService } from '../service/project.service';
 import { Project } from './Project';
@@ -15,9 +17,13 @@ import { Project } from './Project';
 })
 export class AddProjectsComponent implements OnInit
 {
+  custId: any;
+  companyName: any;
   Project: Project[] = [];
   projectList: any = [];
   addProjectForm!: FormGroup;
+  customers: Customer[] = [];
+  employees: Employee[] = [];
 
 
   constructor(public fb: FormBuilder, private projectService: ProjectService, private http: HttpClient, private notifyService: NotificationService, private router: Router, private translate: TranslateService) {
@@ -35,6 +41,8 @@ export class AddProjectsComponent implements OnInit
     HoursSpend: new FormControl('', [Validators.required]),
     EmployeeId: new FormControl('', [Validators.required]),
     CustomerId: new FormControl('', [Validators.required]),
+    StartDateString: new FormControl(''),
+    DeadlineDateString: new FormControl(''),
   
   });
   }
@@ -42,6 +50,8 @@ export class AddProjectsComponent implements OnInit
 
   ngOnInit(): void
   {
+    this.getAllCustomers();
+    this.getAllEmployees();
     this.createForm();
   }
 
@@ -66,6 +76,20 @@ export class AddProjectsComponent implements OnInit
     }
     this.reload();
   }
+
+ getAllCustomers() {
+    this.projectService.getCustomers().subscribe((data: Customer[]) => {
+      this.customers = data;
+      console.log(this.customers)
+    })
+  }
+  getAllEmployees() {
+    this.projectService.getEmployees().subscribe((data: Employee[]) => {
+      this.employees = data;
+      console.log(this.employees)
+    })
+  }
+
 
   reload() {
     setTimeout(() => { this.router.navigateByUrl('/projects-overview'); }, 2000);

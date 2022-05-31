@@ -5,6 +5,7 @@ export interface Employee {
   phone: number;
   email: string;
   jobTitle: number;
+  jobTitleString: string;
   birthDate: Date;
   hiringDate: Date;
   birthDateString: String;

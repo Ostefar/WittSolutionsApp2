@@ -20,7 +20,7 @@
       <tr *ngFor="let employee of employees;">
         <td>{{employee.id}}</td>
         <td>{{employee.firstName}} {{employee.lastName}}</td>
-        <td>{{employee.jobTitle}}</td>
+        <td>{{employee.jobTitleString | translate }}</td>
         <td>{{employee.salary}}.-</td>
         <td>{{employee.phone}}</td>
         <td>{{employee.email}}</td>

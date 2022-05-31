@@ -10,9 +10,11 @@
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="d-flex flex-row">
         <div class="p-2 col-md-2">
-          <input id="Note" type="text" formControlName="Note" class="form-control" placeholder="{{ 'projects.note' | translate}}">
+          <textarea id="Note" type="text" formControlName="Note" class="form-control" rows="4" cols="50" placeholder="{{ 'projects.note' | translate}}">
+          </textarea>
           <div *ngIf="note?.invalid && (note?.dirty || note?.touched)" class="alert alert-danger">
             <div *ngIf="note?.errors">
               {{ 'projects.note' | translate}} {{ 'shared.required' | translate}}
@@ -21,105 +23,105 @@
         </div>
       </div>
 
-      <div class="d-flex flex-row">
-        <div class="p-2 col-md-2">
-          <label for="StartDate">{{ 'projects.startdate' | translate}}</label>
-          <input id="StartDate" type="Date" formControlName="StartDate" class="form-control" placeholder="{{ 'projects.startdate' | translate}}">
-          <div *ngIf="startDate?.invalid && (startDate?.dirty || startDate?.touched)" class="alert alert-danger">
-            <div *ngIf="startDate?.errors">
-              {{ 'projects.startdate' | translate}} {{ 'shared.required' | translate}}
+        <div class="d-flex flex-row">
+          <div class="p-2 col-md-2">
+            <label for="StartDate">{{ 'projects.startdate' | translate}}</label>
+            <input id="StartDate" type="Date" formControlName="StartDate" class="form-control" placeholder="{{ 'projects.startdate' | translate}}">
+            <div *ngIf="startDate?.invalid && (startDate?.dirty || startDate?.touched)" class="alert alert-danger">
+              <div *ngIf="startDate?.errors">
+                {{ 'projects.startdate' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 col-md-2">
+            <label for="DeadlineDate">{{ 'projects.deadlinedate' | translate}}</label>
+            <input id="DeadlineDate" type="Date" formControlName="DeadlineDate" class="form-control" placeholder="{{ 'projects.deadlinedate' | translate}}">
+            <div *ngIf="deadlineDate?.invalid && (deadlineDate?.dirty || deadlineDate?.touched)" class="alert alert-danger">
+              <div *ngIf="deadlineDate?.errors">
+                {{ 'projects.deadlinedate' | translate}} {{ 'shared.required' | translate}}
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="p-2 col-md-2">
-          <label for="DeadlineDate">{{ 'projects.deadlinedate' | translate}}</label>
-          <input id="DeadlineDate" type="Date" formControlName="DeadlineDate" class="form-control" placeholder="{{ 'projects.deadlinedate' | translate}}">
-          <div *ngIf="deadlineDate?.invalid && (deadlineDate?.dirty || deadlineDate?.touched)" class="alert alert-danger">
-            <div *ngIf="deadlineDate?.errors">
-              {{ 'projects.deadlinedate' | translate}} {{ 'shared.required' | translate}}
+        <div class="d-flex flex-row">
+          <div class="p-2 col-md-2">
+            <input id="EstimatedHours" type="number" formControlName="EstimatedHours" class="form-control" placeholder="{{ 'projects.estimatedhours' | translate}}">
+            <div *ngIf="estimatedHours?.invalid && (estimatedHours?.dirty || estimatedHours?.touched)" class="alert alert-danger">
+              <div *ngIf="estimatedHours?.errors">
+                {{ 'projects.estimatedhours' | translate}} {{ 'shared.required' | translate}}
+              </div>
             </div>
+          </div>
+
+          <div class="p-2 col-md-2">
+            <input id="HourPrice" type="text" formControlName="HourPrice" class="form-control" placeholder="{{ 'projects.hourprice' | translate}}">
+            <div *ngIf="hourPrice?.invalid && (hourPrice?.dirty || hourPrice?.touched)" class="alert alert-danger">
+              <div *ngIf="hourPrice?.errors">
+                {{ 'projects.hourprice' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row">
+          <div class="p-2 col-md-2">
+            <input id="ProjectPrice" type="number" formControlName="ProjectPrice" class="form-control" placeholder="{{ 'projects.projectprice' | translate}}">
+            <div *ngIf="projectPrice?.invalid && (projectPrice?.dirty || projectPrice?.touched)" class="alert alert-danger">
+              <div *ngIf="projectPrice?.errors">
+                {{ 'projects.projectprice' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 col-md-2">
+            <input id="HoursSpend" type="text" formControlName="HoursSpend" class="form-control" placeholder="{{ 'projects.hoursspend' | translate}}">
+            <div *ngIf="hoursSpend?.invalid && (hoursSpend?.dirty || hoursSpend?.touched)" class="alert alert-danger">
+              <div *ngIf="hoursSpend?.errors">
+                {{ 'projects.hoursspend' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row">
+          <div class="p-2 col-md-2">
+            <label for="CustomerId">{{ 'projects.customer' | translate}}</label>
+            <select formControlName="CustomerId" id="CustomerId" class="form-control">
+              <option *ngFor="let customers of customers" [ngValue]="customers.id">
+                {{ customers.companyName }}
+              </option>
+            </select>
+            <div *ngIf="customerId?.invalid && (customerId?.dirty || customerId?.touched)" class="alert alert-danger">
+              <div *ngIf="customerId?.errors">
+                {{ 'projects.customer' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 col-md-2">
+            <label for="EmployeeId">{{ 'projects.employee' | translate}}</label>
+            <select formControlName="EmployeeId" id="EmployeeId" class="form-control">
+              <option *ngFor="let employees of employees" [ngValue]="employees.id">
+                {{ employees.firstName }}  {{ employees.lastName }}
+              </option>
+            </select>
+            <div *ngIf="employeeId?.invalid && (employeeId?.dirty || employeeId?.touched)" class="alert alert-danger">
+              <div *ngIf="employeeId?.errors">
+                {{ 'projects.employee' | translate}} {{ 'shared.required' | translate}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <div class="d-flex flex-row">
+          <div class="p-2 col-md-2">
+            <button type="submit" [disabled]="addProjectForm.invalid" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
-
-      <div class="d-flex flex-row">
-        <div class="p-2 col-md-2">
-          <input id="EstimatedHours" type="number" formControlName="EstimatedHours" class="form-control" placeholder="{{ 'projects.estimatedhours' | translate}}">
-          <div *ngIf="estimatedHours?.invalid && (estimatedHours?.dirty || estimatedHours?.touched)" class="alert alert-danger">
-            <div *ngIf="estimatedHours?.errors">
-              {{ 'projects.estimatedhours' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-
-        <div class="p-2 col-md-2">
-          <input id="HourPrice" type="text" formControlName="HourPrice" class="form-control" placeholder="{{ 'projects.hourprice' | translate}}">
-          <div *ngIf="hourPrice?.invalid && (hourPrice?.dirty || hourPrice?.touched)" class="alert alert-danger">
-            <div *ngIf="hourPrice?.errors">
-              {{ 'projects.hourprice' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex flex-row">
-        <div class="p-2 col-md-2">
-          <input id="ProjectPrice" type="number" formControlName="ProjectPrice" class="form-control" placeholder="{{ 'projects.projectprice' | translate}}">
-          <div *ngIf="projectPrice?.invalid && (projectPrice?.dirty || projectPrice?.touched)" class="alert alert-danger">
-            <div *ngIf="projectPrice?.errors">
-              {{ 'projects.projectprice' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-
-        <div class="p-2 col-md-2">
-          <input id="HoursSpend" type="text" formControlName="HoursSpend" class="form-control" placeholder="{{ 'projects.hoursspend' | translate}}">
-          <div *ngIf="hoursSpend?.invalid && (hoursSpend?.dirty || hoursSpend?.touched)" class="alert alert-danger">
-            <div *ngIf="hoursSpend?.errors">
-              {{ 'projects.hoursspend' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex flex-row">
-        <div class="p-2 col-md-2">
-          <label for="CustomerId">{{ 'projects.customer' | translate}}</label>
-          <select formControlName="CustomerId" id="CustomerId" class="form-control">
-            <option *ngFor="let customers of customers" [ngValue]="customers.id">
-              {{ customers.companyName }}
-            </option>
-          </select>
-          <div *ngIf="customerId?.invalid && (customerId?.dirty || customerId?.touched)" class="alert alert-danger">
-            <div *ngIf="customerId?.errors">
-              {{ 'projects.customer' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-
-        <div class="p-2 col-md-2">
-          <label for="EmployeeId">{{ 'projects.employee' | translate}}</label>
-          <select formControlName="EmployeeId" id="EmployeeId" class="form-control">
-            <option *ngFor="let employees of employees" [ngValue]="employees.id">
-              {{ employees.firstName }}  {{ employees.lastName }}
-            </option>
-          </select>
-          <div *ngIf="employeeId?.invalid && (employeeId?.dirty || employeeId?.touched)" class="alert alert-danger">
-            <div *ngIf="employeeId?.errors">
-              {{ 'projects.employee' | translate}} {{ 'shared.required' | translate}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br />
-      <div class="d-flex flex-row">
-        <div class="p-2 col-md-2">
-          <button type="submit" [disabled]="addProjectForm.invalid" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </div>
 </form>
 </div>
 

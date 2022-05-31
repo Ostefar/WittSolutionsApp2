@@ -31,6 +31,16 @@ export class EmployeesOverviewComponent implements OnInit {
   GetAllEmployees() {
     this.employeeService.getAll().subscribe((data: Employee[]) => {
       this.employees = data;
+      for (let employee of this.employees) {
+        if (employee.jobTitle === 1) {
+          employee.jobTitleString = "employees.consultent"
+        } else if (employee.jobTitle === 2) {
+          employee.jobTitleString = "employees.student"
+        } else {
+          employee.jobTitleString = "employees.fulltime"
+        }
+      }
+
       console.log(this.employees)
     })
   }

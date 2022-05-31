@@ -10,6 +10,7 @@ const PROXY_CONFIG = [
       "/employee",
       "/customer",
       "/project",
+      "/management",
    ],
     target: target,
     secure: false,

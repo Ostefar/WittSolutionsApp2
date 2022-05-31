@@ -36,6 +36,7 @@
     <None Remove="Bogholderen\src\app\projects\Project.ts" />
     <None Remove="Bogholderen\src\app\service\customer.service.ts" />
     <None Remove="Bogholderen\src\app\service\employee.service.ts" />
+    <None Remove="Bogholderen\src\app\service\management.service.ts" />
     <None Remove="Bogholderen\src\app\service\notification-service.ts" />
     <None Remove="Bogholderen\src\app\service\project.service.ts" />
     <None Remove="Bogholderen\src\app\service\user.service.ts" />
@@ -50,16 +51,13 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Bogholderen\src\app\projects\Project.ts" />
+    <TypeScriptCompile Include="Bogholderen\src\app\service\management.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\project.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\customer.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\employee.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\notification-service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\user.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\users\User.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Bogholderen\src\app\management\" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

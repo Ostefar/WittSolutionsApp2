@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { NbButtonModule, NbTabsetModule } from '@nebular/theme';
+import { NbButtonModule, NbLayoutComponent, NbTabsetModule } from '@nebular/theme';
 import { AddUsersComponent } from './users/add-users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersOverviewComponent } from './users/users-overview.component';
@@ -25,6 +25,7 @@ import { ProjectsOverviewComponent } from './projects/projects-overview.componen
 import { AddProjectsComponent } from './projects/add-projects.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { UpdateProjectsComponent } from './projects/update-projects.component';
+import { ManagementOverviewComponent } from './management/management-overview.component';
 
 
 
@@ -45,6 +46,7 @@ import { UpdateProjectsComponent } from './projects/update-projects.component';
     ProjectsOverviewComponent,
     AddProjectsComponent,
     UpdateProjectsComponent,
+    ManagementOverviewComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -65,7 +67,7 @@ import { UpdateProjectsComponent } from './projects/update-projects.component';
       preventDuplicates: true,
     }),
     BrowserAnimationsModule,
-    
+    //NbLayoutComponent,
     NbTabsetModule,
     DropDownListModule,
     RouterModule.forRoot([
@@ -82,6 +84,7 @@ import { UpdateProjectsComponent } from './projects/update-projects.component';
       { path: 'projects-overview', component: ProjectsOverviewComponent },
       { path: 'add-projects', component: AddProjectsComponent },
       { path: 'update-projects/:id', component: UpdateProjectsComponent },
+      { path: 'management-overview', component: ManagementOverviewComponent },
 
     ])
   ],

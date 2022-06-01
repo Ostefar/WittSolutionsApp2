@@ -1,82 +1,92 @@
 {
-	"address": {
-		"addressline1": "Address line 1",
-		"addressline2": "Address line 2",
-		"city": "City",
-		"country": "Country",
-		"zipcode": "Zip code"
-	},
-	"customers": {
-		"companyname": "Company name",
-		"contactperson": "Contact person",
-		"title": "Customers",
-		"vatnumber": "Vat number",
-		"websiteurl": "Website "
-	},
-	"employees": {
-		"birthdate": "Birth date",
-		"consultent": "Freelance consultant",
-		"fulltime": "Full time employee",
-		"hiringdate": "Hiring date",
-		"jobtitle": "Job title",
-		"salary": "Hourly salary",
-		"sickdays": "Sick days",
-		"student": "Student helper",
-		"title": "Employees",
-		"vacationdays": "Vacation days",
-		"vacationdaysleft": "Vacation days left"
-	},
-	"error": {
-		"error": "Error",
-		"errormessage": "Something went wrong, try again"
-	},
-	"home": {
-		"title": "Home"
-	},
-	"management": {
-		"title": "Management"
-	},
-	"projects": {
-		"customer": "Customer",
-		"deadlinedate": "Deadline",
-		"employee": "Employee",
-		"estimatedhours": "Est. hours",
-		"hourprice": "Hour price",
-		"hoursspend": "Hours spend",
-		"note": "Description",
-		"projectname": "Project name",
-		"projectprice": "Project price",
-		"startdate": "Start date",
-		"title": "Projects"
-	},
-	"shared": {
-		"required": "is required"
-	},
-	"success": {
-		"customercreated": "Customer created",
-		"customerdeleted": "Customer deleted",
-		"customerupdated": "Customer updated",
-		"employeecreated": "New employee created",
-		"employeedeleted": "Employee deleted",
-		"employeeupdated": "Employee updated",
-		"projectcreated": "Project created",
-		"projectdeleted": "Project deleted",
-		"projectupdated": "Project updated",
-		"success": "Success",
-		"usercreated": "New user created",
-		"userdeleted": "User deleted",
-		"userupdated": "User updated"
-	},
-	"users": {
-		"address": "Address",
-		"address_id": "Address id",
-		"email": "Email",
-		"firstname": "First name",
-		"lastname": "Last name",
-		"name": "Name",
-		"password": "Password",
-		"phone": "Phone",
-		"title": "Users",
-		"username": "Username"
-	}
+  "address": {
+    "addressline1": "Address line 1",
+    "addressline2": "Address line 2",
+    "city": "City",
+    "country": "Country",
+    "zipcode": "Zip code"
+  },
+  "customers": {
+    "companyname": "Company name",
+    "contactperson": "Contact person",
+    "title": "Customers",
+    "vatnumber": "Vat number",
+    "websiteurl": "Website "
+  },
+  "employees": {
+    "birthdate": "Birth date",
+    "consultent": "Freelance consultant",
+    "fulltime": "Full time employee",
+    "hiringdate": "Hiring date",
+    "jobtitle": "Job title",
+    "salary": "Hourly salary",
+    "sickdays": "Sick days",
+    "student": "Student helper",
+    "title": "Employees",
+    "vacationdays": "Vacation days",
+    "vacationdaysleft": "Vacation days left",
+    "name": "Name"
+  },
+  "error": {
+    "error": "Error",
+    "errormessage": "Something went wrong, try again"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "management": {
+    "title": "Management"
+  },
+  "projects": {
+    "customer": "Customer",
+    "deadlinedate": "Deadline",
+    "employee": "Employee",
+    "estimatedhours": "Est. hours",
+    "hourprice": "Hour price",
+    "hoursspend": "Hours spend",
+    "note": "Description",
+    "projectname": "Project name",
+    "projectprice": "Project price",
+    "startdate": "Start date",
+    "title": "Projects"
+  },
+  "shared": {
+    "required": "is required"
+  },
+  "success": {
+    "customercreated": "Customer created",
+    "customerdeleted": "Customer deleted",
+    "customerupdated": "Customer updated",
+    "employeecreated": "New employee created",
+    "employeedeleted": "Employee deleted",
+    "employeeupdated": "Employee updated",
+    "projectcreated": "Project created",
+    "projectdeleted": "Project deleted",
+    "projectupdated": "Project updated",
+    "success": "Success",
+    "usercreated": "New user created",
+    "userdeleted": "User deleted",
+    "userupdated": "User updated",
+    "hoursregistrated": "Hours registrated"
+  },
+  "users": {
+    "address": "Address",
+    "address_id": "Address id",
+    "email": "Email",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "name": "Name",
+    "password": "Password",
+    "phone": "Phone",
+    "title": "Users",
+    "username": "Username"
+  },
+  "hours": {
+    "totalhours": "Hours total",
+    "estimatedhours": "Estimated hours",
+    "remaininghours": "Hours left",
+    "hourstoregistrate": "Hours to registrate",
+    "registrationdate": "Registration date"
+
+  }
 }

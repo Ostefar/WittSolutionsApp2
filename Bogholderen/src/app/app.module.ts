@@ -26,7 +26,8 @@ import { AddProjectsComponent } from './projects/add-projects.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { UpdateProjectsComponent } from './projects/update-projects.component';
 import { ManagementOverviewComponent } from './management/management-overview.component';
-import { RegistrateHoursComponent } from './projects/registrate-hours.component';
+import { RegistrateHoursComponent } from './hours/registrate-hours.component';
+import { UpdateHoursComponent } from './hours/update-hours.component';
 
 
 
@@ -49,6 +50,7 @@ import { RegistrateHoursComponent } from './projects/registrate-hours.component'
     UpdateProjectsComponent,
     ManagementOverviewComponent,
     RegistrateHoursComponent,
+    UpdateHoursComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -87,6 +89,7 @@ import { RegistrateHoursComponent } from './projects/registrate-hours.component'
       { path: 'update-projects/:id', component: UpdateProjectsComponent },
       { path: 'management-overview', component: ManagementOverviewComponent },
       { path: 'registrate-hours/:id', component: RegistrateHoursComponent },
+      { path: 'update-hours/:id', component: UpdateHoursComponent },
 
     ])
   ],

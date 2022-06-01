@@ -4,12 +4,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Customer } from '../customers/Customer';
-import { Employee } from '../employees/Employee';
 import { NotificationService } from '../service/notification-service';
+import { Hours } from '../hours/Hours';
+import { HoursService } from '../service/hours.service';
+import { Project } from '../projects/Project';
 import { ProjectService } from '../service/project.service';
-import { Hours } from './Hours';
-import { Project } from './Project';
 
 @Component({
 
@@ -19,18 +18,24 @@ import { Project } from './Project';
 })
 export class RegistrateHoursComponent implements OnInit
 {
+  // lav en total hours registered og en expected hours og en hours left column
   registrateHoursForm!: FormGroup;
   id!: number;
-  hours!: Hours;
+  project!: Project;
+  hours: Hours[] = [];
+  toggleRegistration = true;
+  testInt = 2;
+  hoursTotal!: number;
+  hoursEst!: number;
 
 todaysDate = new Date();
   dd = String(this.todaysDate.getDate()).padStart(2, '0');
   mm = String(this.todaysDate.getMonth() + 1).padStart(2, '0'); //January is 0!
   yyyy = this.todaysDate.getFullYear();
 
-today = this.mm + '-' + this.dd + '-' + this.yyyy;
+today = this.yyyy + '-' + this.mm + '-' + this.dd;
  
-  constructor(public fb: FormBuilder, private projectService: ProjectService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
+  constructor(public fb: FormBuilder, private hoursService: HoursService, private projectService: ProjectService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
    
   }
 
@@ -38,8 +43,9 @@ today = this.mm + '-' + this.dd + '-' + this.yyyy;
     this.registrateHoursForm = this.fb.group({
     HoursToRegistrate: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
     RegistrationDate: new FormControl('', [Validators.required]),
-    Note: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
+    Note: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(150)]),
     ProjectId: new FormControl(''),
+    RegistrationDateString: new FormControl(''),
   });
   }
 
@@ -48,14 +54,15 @@ today = this.mm + '-' + this.dd + '-' + this.yyyy;
     this.today
     this.setDateAndId();
     this.registrationForm();
-    console.log("this is me:" + this.registrateHoursForm);
+    this.GetAllRegistrations(this.id);
+
   }
 
 
   onSubmit()
   {
     if (this.registrateHoursForm.valid) {
-      this.projectService.create(this.registrateHoursForm.value)
+      this.hoursService.create(this.registrateHoursForm.value)
         .subscribe(
           (data) => {
             this.showToasterSuccess();
@@ -72,15 +79,24 @@ today = this.mm + '-' + this.dd + '-' + this.yyyy;
     }
     this.reload();
   }
+  ToggleRegistration() {
+    if (this.toggleRegistration == true) {
+      this.toggleRegistration = false
+    } else {
+      this.toggleRegistration = true
+    }
+  }
 
   setDateAndId() {
-    this.id = this.route.snapshot.params['id'];
-  this.projectService.getById(this.id).subscribe((data: Hours) => {
-      this.hours = data;
+      this.id = this.route.snapshot.params['id'];
+      this.projectService.getById(this.id).subscribe((data: Project) => {
+        this.project = data;
+        this.hoursEst = this.project.estimatedHours
 
     this.registrateHoursForm.setValue({
-      HoursToRegistrate: '',
+      HoursToRegistrate: "",
       RegistrationDate: this.today,
+      RegistrationDateString: "",
       Note: '',
       ProjectId: this.id,
         
@@ -89,11 +105,26 @@ today = this.mm + '-' + this.dd + '-' + this.yyyy;
   }
 
   reload() {
-    setTimeout(() => { this.router.navigateByUrl('/projects-overview'); }, 2000);
+    setTimeout(() => { this.router.navigateByUrl('/'); }, 1900);
+    setTimeout(() => { this.router.navigateByUrl('/registrate-hours/' + this.id); }, 2000);
+  }
+  GetAllRegistrations(id: number) {
+    this.hoursService.getAll(this.id).subscribe((data: Hours[]) => {
+      this.hours = data;
+      this.hoursTotal = this.hours.reduce((sum, current) => sum + current.hoursToRegistrate, 0);
+      console.log(this.hours)
+    })
+  }
+
+  DeleteRegistration(id: number) {
+    this.hoursService.delete(id).subscribe(res => {
+      this.showToasterSuccess();
+      console.log('Project deleted successfully!');
+    })
+    this.reload();
   }
 
   showToasterSuccess() {
-    // not translated success.hoursregistrated
     this.notifyService.showSuccess(this.translate.instant("success.hoursregistrated"), this.translate.instant("success.success"))
   }
 

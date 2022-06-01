@@ -1,82 +1,92 @@
 {
-	"address": {
-		"addressline1": "Adresse linje 1",
-		"addressline2": "Adresse linje 2",
-		"city": "By",
-		"country": "Land",
-		"zipcode": "Post nr."
-	},
-	"customers": {
-		"companyname": "Firmanavn",
-		"contactperson": "Kontakt person",
-		"title": "Kunder",
-		"vatnumber": "CVR nr",
-		"websiteurl": "Hjemmeside"
-	},
-	"employees": {
-		"birthdate": "Fødsels dato",
-		"consultent": "Freelance konsulent",
-		"fulltime": "Fast ansat",
-		"hiringdate": "Ansættelses dato",
-		"jobtitle": "Stilling",
-		"salary": "Timeløn",
-		"sickdays": "Sygedage",
-		"student": "Studenter medhjælper",
-		"title": "Medarbejdere",
-		"vacationdays": "Ferie dage",
-		"vacationdaysleft": "Ferie dage tilbage"
-	},
-	"error": {
-		"error": "Fejl",
-		"errormessage": "Der gik noget galt, prøv igen"
-	},
-	"home": {
-		"title": "Hjem"
-	},
-	"management": {
-		"title": "Management"
-	},
-	"projects": {
-		"customer": "Kunde",
-		"deadlinedate": "Deadline",
-		"employee": "Medarbejder",
-		"estimatedhours": "Est. timer",
-		"hourprice": "Time pris",
-		"hoursspend": "Timer brugt",
-		"note": "Beskrivelse",
-		"projectname": "Projektnavn",
-		"projectprice": "Projekt pris",
-		"startdate": "Start dato",
-		"title": "Projekter"
-	},
-	"shared": {
-		"required": "skal udfyldes"
-	},
-	"success": {
-		"customercreated": "Kunde oprettet",
-		"customerdeleted": "Kunde slettet",
-		"customerupdated": "Kunde opdateret",
-		"employeecreated": "Ny medarbejder oprettet",
-		"employeedeleted": "Medarbejder slettet",
-		"employeeupdated": "Medarbejder opdateret",
-		"projectcreated": "Projekt oprettet",
-		"projectdeleted": "Projekt slettet",
-		"projectupdated": "Projekt opdateret",
-		"success": "Succes",
-		"usercreated": "Ny bruger oprettet",
-		"userdeleted": "Bruger slettet",
-		"userupdated": "Bruger opdateret"
-	},
-	"users": {
-		"address": "Adresse",
-		"address_id": "Adresse id",
-		"email": "Email",
-		"firstname": "Fornavn",
-		"lastname": "Efternavn",
-		"name": "Navn",
-		"password": "Kodeord",
-		"phone": "Tlf. nr.",
-		"title": "Brugere",
-		"username": "Brugernavn"
-	}
+  "address": {
+    "addressline1": "Adresse linje 1",
+    "addressline2": "Adresse linje 2",
+    "city": "By",
+    "country": "Land",
+    "zipcode": "Post nr."
+  },
+  "customers": {
+    "companyname": "Firmanavn",
+    "contactperson": "Kontakt person",
+    "title": "Kunder",
+    "vatnumber": "CVR nr",
+    "websiteurl": "Hjemmeside"
+  },
+  "employees": {
+    "birthdate": "Fødsels dato",
+    "consultent": "Freelance konsulent",
+    "fulltime": "Fast ansat",
+    "hiringdate": "Ansættelses dato",
+    "jobtitle": "Stilling",
+    "salary": "Timeløn",
+    "sickdays": "Sygedage",
+    "student": "Studenter medhjælper",
+    "title": "Medarbejdere",
+    "vacationdays": "Ferie dage",
+    "vacationdaysleft": "Ferie dage tilbage",
+    "name": "Navn"
+  },
+  "error": {
+    "error": "Fejl",
+    "errormessage": "Der gik noget galt, prøv igen"
+  },
+  "home": {
+    "title": "Hjem"
+  },
+  "management": {
+    "title": "Management"
+  },
+  "projects": {
+    "customer": "Kunde",
+    "deadlinedate": "Deadline",
+    "employee": "Medarbejder",
+    "estimatedhours": "Est. timer",
+    "hourprice": "Time pris",
+    "hoursspend": "Timer brugt",
+    "note": "Beskrivelse",
+    "projectname": "Projektnavn",
+    "projectprice": "Projekt pris",
+    "startdate": "Start dato",
+    "title": "Projekter"
+  },
+  "shared": {
+    "required": "skal udfyldes"
+  },
+  "success": {
+    "customercreated": "Kunde oprettet",
+    "customerdeleted": "Kunde slettet",
+    "customerupdated": "Kunde opdateret",
+    "employeecreated": "Ny medarbejder oprettet",
+    "employeedeleted": "Medarbejder slettet",
+    "employeeupdated": "Medarbejder opdateret",
+    "projectcreated": "Projekt oprettet",
+    "projectdeleted": "Projekt slettet",
+    "projectupdated": "Projekt opdateret",
+    "success": "Succes",
+    "usercreated": "Ny bruger oprettet",
+    "userdeleted": "Bruger slettet",
+    "userupdated": "Bruger opdateret",
+    "hoursregistrated": "Timer registreret"
+  },
+  "users": {
+    "address": "Adresse",
+    "address_id": "Adresse id",
+    "email": "Email",
+    "firstname": "Fornavn",
+    "lastname": "Efternavn",
+    "name": "Navn",
+    "password": "Kodeord",
+    "phone": "Tlf. nr.",
+    "title": "Brugere",
+    "username": "Brugernavn"
+  },
+  "hours": {
+    "totalhours": "Timer i alt",
+    "estimatedhours": "Estimerede timer",
+    "remaininghours": "Timer tilbage",
+    "hourstoregistrate": "Timer at registrere",
+    "registrationdate": "Registrerings dato"
+
+  }
 }

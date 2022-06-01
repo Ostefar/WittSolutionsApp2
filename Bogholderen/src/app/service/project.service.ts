@@ -38,7 +38,6 @@ export class ProjectService {
     return this.http.delete(this.APIUrl + '/DeleteProject' + id)
   }
 
-
   getById(id: number): Observable<any> {
     return this.http.get<Project>(this.APIUrl + '/GetProjectBy' + id)
   }

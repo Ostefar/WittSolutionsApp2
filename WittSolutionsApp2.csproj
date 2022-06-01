@@ -37,6 +37,7 @@
     <None Remove="Bogholderen\src\app\projects\Project.ts" />
     <None Remove="Bogholderen\src\app\service\customer.service.ts" />
     <None Remove="Bogholderen\src\app\service\employee.service.ts" />
+    <None Remove="Bogholderen\src\app\service\hours.service.ts" />
     <None Remove="Bogholderen\src\app\service\management.service.ts" />
     <None Remove="Bogholderen\src\app\service\notification-service.ts" />
     <None Remove="Bogholderen\src\app\service\project.service.ts" />
@@ -51,9 +52,10 @@
     <TypeScriptCompile Include="Bogholderen\src\app\employees\Employee.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Bogholderen\src\app\projects\Hours.ts" />
+    <TypeScriptCompile Include="Bogholderen\src\app\hours\Hours.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\projects\Project.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\management.service.ts" />
+    <TypeScriptCompile Include="Bogholderen\src\app\service\hours.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\project.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\customer.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\employee.service.ts" />

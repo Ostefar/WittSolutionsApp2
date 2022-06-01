@@ -66,6 +66,9 @@
           <th>{{ 'hours.estimatedhours' | translate}}</th>
           <th>{{ 'hours.totalhours' | translate}}</th>
           <th>{{ 'hours.remaininghours' | translate}}</th>
+          <th>{{ 'projects.projectprice' | translate}}</th>
+          <th>{{ 'projects.hourprice' | translate}}</th>
+          <th>{{ 'hours.pricefornow' | translate}}</th>
         </tr>
       </thead>
       <tbody>
@@ -73,6 +76,9 @@
           <td>{{hoursEst}}</td>
           <td>{{hoursTotal}}</td>
           <td>{{hoursEst - hoursTotal}}</td>
+          <td>{{projectPrice}}.-</td>
+          <td>{{hourPrice}}.-</td>
+          <td>{{hoursTotal * hourPrice}}.-</td>
 
         </tr>
       </tbody>

@@ -27,6 +27,8 @@ export class RegistrateHoursComponent implements OnInit
   testInt = 2;
   hoursTotal!: number;
   hoursEst!: number;
+  hourPrice!: number;
+  projectPrice!: number;
 
 todaysDate = new Date();
   dd = String(this.todaysDate.getDate()).padStart(2, '0');
@@ -92,6 +94,8 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
       this.projectService.getById(this.id).subscribe((data: Project) => {
         this.project = data;
         this.hoursEst = this.project.estimatedHours
+        this.hourPrice = this.project.hourPrice
+        this.projectPrice = this.project.projectPrice
 
     this.registrateHoursForm.setValue({
       HoursToRegistrate: "",

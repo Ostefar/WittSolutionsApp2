@@ -86,7 +86,8 @@
     "estimatedhours": "Estimated hours",
     "remaininghours": "Hours left",
     "hourstoregistrate": "Hours to registrate",
-    "registrationdate": "Registration date"
+    "registrationdate": "Registration date",
+    "pricefornow":  "Price to date"
 
   }
 }

@@ -86,7 +86,8 @@
     "estimatedhours": "Estimerede timer",
     "remaininghours": "Timer tilbage",
     "hourstoregistrate": "Timer at registrere",
-    "registrationdate": "Registrerings dato"
+    "registrationdate": "Registrerings dato",
+    "pricefornow":  "Pris til dato"
 
   }
 }

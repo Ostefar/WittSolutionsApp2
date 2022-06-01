@@ -82,7 +82,7 @@
     "username": "Brugernavn"
   },
   "hours": {
-    "totalhours": "Timer i alt",
+    "totalhours": "Timer registreret i alt",
     "estimatedhours": "Estimerede timer",
     "remaininghours": "Timer tilbage",
     "hourstoregistrate": "Timer at registrere",

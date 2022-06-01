@@ -82,7 +82,7 @@
     "username": "Username"
   },
   "hours": {
-    "totalhours": "Hours total",
+    "totalhours": "Total hours registrated",
     "estimatedhours": "Estimated hours",
     "remaininghours": "Hours left",
     "hourstoregistrate": "Hours to registrate",

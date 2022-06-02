@@ -59,9 +59,9 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
 
   private registrationForm() { 
     this.registrateHoursForm = this.fb.group({
-    HoursToRegistrate: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
+      HoursToRegistrate: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(1), Validators.maxLength(2)]),
     RegistrationDate: new FormControl('', [Validators.required]),
-    Note: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(150)]),
+    Note: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(150)]),
     ProjectId: new FormControl(''),
     RegistrationDateString: new FormControl(''),
   });

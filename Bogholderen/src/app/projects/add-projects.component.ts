@@ -31,14 +31,14 @@ export class AddProjectsComponent implements OnInit
   }
   private createForm() { 
     this.addProjectForm = this.fb.group({
-    ProjectName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
-    Note: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(150)]),
+    ProjectName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2), Validators.maxLength(45)]),
+    Note: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(150)]),
     StartDate: new FormControl('', [Validators.required]),
     DeadlineDate: new FormControl('', [Validators.required]),
-    EstimatedHours: new FormControl('', [Validators.required]),
-    HourPrice: new FormControl('', [Validators.required]),
-    ProjectPrice: new FormControl('', [Validators.required]),
-    HoursSpend: new FormControl('', [Validators.required]),
+    EstimatedHours: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(4)]),
+    HourPrice: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(4)]),
+    ProjectPrice: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(8)]),
+    HoursSpend: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(4)]),
     EmployeeId: new FormControl('', [Validators.required]),
     CustomerId: new FormControl('', [Validators.required]),
     StartDateString: new FormControl(''),

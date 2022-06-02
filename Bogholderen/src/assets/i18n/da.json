@@ -4,7 +4,15 @@
     "addressline2": "Adresse linje 2",
     "city": "By",
     "country": "Land",
-    "zipcode": "Post nr."
+    "zipcode": "Post nr.",
+    "zipcodelength": "Post nr. skal minimum være 4 tal",
+    "zipcodelengthmax": "Post nr. kan maximum være 4 tal",
+    "citylength": "By skal minimum være 2 bogstaver",
+    "citylengthmax": "By kan maximum være 40 bogstaver",
+    "countrylength": "Land skal minimum være 2 bogstaver",
+    "countrylengthmax": "Land kan maximum være 40 bogstaver",
+    "addresslinelength": "Adresse linje skal minimum være 5 bogstaver",
+    "addresslinelengthmax": "Adresse linje kan maximum være 65 bogstaver"
   },
   "customers": {
     "companyname": "Firmanavn",
@@ -48,7 +56,13 @@
     "projectname": "Projektnavn",
     "projectprice": "Projekt pris",
     "startdate": "Start dato",
-    "title": "Projekter"
+    "title": "Projekter",
+    "projectnamelength": "Projekt navn skal minimum være 2 bogstaver",
+    "projectnamelengthmax": "Projekt navn kan maximum være 45 bogstaver",
+    "estimatedhourslengthmax": "Est. timer kan maximum være 4 tal",
+    "hourpricelengthmax": "Time pris kan maximum være 4 tal",
+    "projectpricelengthmax": "Project pris kan maximum være 8 tal",
+    "hoursspendlengthmax": "Timer brugt kan maximum være 4 tal"
   },
   "shared": {
     "required": "skal udfyldes",
@@ -57,7 +71,8 @@
     "delete": "Slet",
     "add": "Tilføj ny",
     "english": "Engelsk",
-    "danish":  "Dansk"
+    "danish": "Dansk",
+    "emailformat":  "Skal være i email format fx. 'navn@adresse.dk'"
   },
   "success": {
     "customercreated": "Kunde oprettet",
@@ -85,7 +100,15 @@
     "password": "Kodeord",
     "phone": "Tlf. nr.",
     "title": "Brugere",
-    "username": "Brugernavn"
+    "username": "Brugernavn",
+    "fistnamelength": "Fornavn skal minimum være 2 bogstaver",
+    "fistnamelengthmax": "Fornavn kan maximum være 50 bogstaver",
+    "lastnamelength": "Efternavn skal minimum være 2 bogstaver",
+    "lastnamelengthmax": "Efternavn kan maximum være 50 bogstaver",
+    "nonumbers": "Kan kun indeholde bogstaver",
+    "phonelength": "Tlf. nr. skal minimum være 8 tal",
+    "phonelengthmax": "Tlf. nr. kan maximum være 8 tal",
+    "onlynumbers": "Kan kun bestå af tal"
   },
   "hours": {
     "totalhours": "Timer registreret i alt",
@@ -95,7 +118,11 @@
     "registrationdate": "Registrerings dato",
     "pricefornow": "Pris til dato",
     "toggleregistration": "Vis/gem nye registreringer",
-    "registrate": "Registrér timer"
+    "registrate": "Registrér timer",
+    "registrationlength": "Time registrering skal minimum være 1 tal",
+    "registrationlengthmax": "Time registrering kan maximum være 2 tal",
+    "notelength": "Noté registrering skal minimum være 4 karakterer",
+    "notelengthmax": "Noté registrering kan maximum være 150 karakterer"
 
 
   }

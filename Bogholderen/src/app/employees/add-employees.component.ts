@@ -25,24 +25,24 @@ export class AddEmployeesComponent implements OnInit
   }
   private createForm() { 
   this.addEmployeeForm = this.fb.group({
-    FirstName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]),
-    LastName: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
-    Phone: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
+    FirstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2), Validators.maxLength(50)]),
+    LastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2), Validators.maxLength(50)]),
+    Phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(8), Validators.maxLength(8)]),
     Email: new FormControl('', [Validators.required, Validators.email]),
     JobTitle: new FormControl(''),
     BirthDate: new FormControl('', [Validators.required]),
     HiringDate: new FormControl('', [Validators.required]),
     BirthDateString: new FormControl(''),
     HiringDateString: new FormControl(''),
-    Salary: new FormControl('', [Validators.required]),
-    VacationDays: new FormControl('', [Validators.required]),
-    VacationDaysLeft: new FormControl('', [Validators.required]),
-    SickDays: new FormControl('', [Validators.required]),
-    AddressLine1: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
-    AddressLine2: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(45)]),
-    Country: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
-    City: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
-    ZipCode: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
+    Salary: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+    VacationDays: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+    VacationDaysLeft: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+    SickDays: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+    AddressLine1: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(65)]),
+    AddressLine2: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(65)]),
+    Country: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(1), Validators.maxLength(40)]),
+    City: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]*$'), Validators.minLength(2), Validators.maxLength(40)]),
+    ZipCode: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(4), Validators.maxLength(4)]),
   });
   }
 
@@ -102,7 +102,7 @@ export class AddEmployeesComponent implements OnInit
 
   get salary() { return this.addEmployeeForm.get("Salary"); }
 
-  get vacationDays() { return this.addEmployeeForm.get("VacationDay"); }
+  get vacationDays() { return this.addEmployeeForm.get("VacationDays"); }
 
   get vacationDaysLeft() { return this.addEmployeeForm.get("VacationDaysLeft"); }
 

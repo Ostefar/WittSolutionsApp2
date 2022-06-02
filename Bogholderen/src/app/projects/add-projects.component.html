@@ -5,8 +5,17 @@
         <div class="p-2 col-md-2">
           <input id="ProjectName" type="text" formControlName="ProjectName" class="form-control" placeholder="{{ 'projects.projectname' | translate}}">
           <div *ngIf="projectName?.invalid && (projectName?.dirty || projectName?.touched)" class="alert alert-danger">
-            <div *ngIf="projectName?.errors">
+            <div *ngIf="projectName?.errors?.['required']">
               {{ 'projects.projectname' | translate}} {{ 'shared.required' | translate}}
+            </div>
+            <div *ngIf="projectName?.errors?.['minlength']">
+              {{ 'projects.projectnamelength' | translate}}
+            </div>
+            <div *ngIf="projectName?.errors?.['maxlength']">
+              {{ 'projects.projectnamelengthmax' | translate}}
+            </div>
+            <div *ngIf="projectName?.errors?.['pattern']">
+              {{ 'users.nonumbers' | translate}}
             </div>
           </div>
         </div>
@@ -16,8 +25,14 @@
           <textarea id="Note" type="text" formControlName="Note" class="form-control" rows="4" cols="50" placeholder="{{ 'projects.note' | translate}}">
           </textarea>
           <div *ngIf="note?.invalid && (note?.dirty || note?.touched)" class="alert alert-danger">
-            <div *ngIf="note?.errors">
+            <div *ngIf="note?.errors?.['required']">
               {{ 'projects.note' | translate}} {{ 'shared.required' | translate}}
+            </div>
+            <div *ngIf="note?.errors?.['minlength']">
+              {{ 'hours.notelength' | translate}}
+            </div>
+            <div *ngIf="note?.errors?.['maxlength']">
+              {{ 'hours.notelengthmax' | translate}}
             </div>
           </div>
         </div>
@@ -47,10 +62,16 @@
 
         <div class="d-flex flex-row">
           <div class="p-2 col-md-2">
-            <input id="EstimatedHours" type="number" formControlName="EstimatedHours" class="form-control" placeholder="{{ 'projects.estimatedhours' | translate}}">
+            <input id="EstimatedHours" type="text" formControlName="EstimatedHours" class="form-control" placeholder="{{ 'projects.estimatedhours' | translate}}">
             <div *ngIf="estimatedHours?.invalid && (estimatedHours?.dirty || estimatedHours?.touched)" class="alert alert-danger">
               <div *ngIf="estimatedHours?.errors">
                 {{ 'projects.estimatedhours' | translate}} {{ 'shared.required' | translate}}
+              </div>
+              <div *ngIf="estimatedHours?.errors?.['pattern']">
+                {{ 'users.onlynumbers' | translate}}
+              </div>
+              <div *ngIf="note?.errors?.['maxlength']">
+                {{ 'projects.estimatedhourslengthmax' | translate}}
               </div>
             </div>
           </div>
@@ -61,16 +82,28 @@
               <div *ngIf="hourPrice?.errors">
                 {{ 'projects.hourprice' | translate}} {{ 'shared.required' | translate}}
               </div>
+              <div *ngIf="hourPrice?.errors?.['pattern']">
+                {{ 'users.onlynumbers' | translate}}
+              </div>
+              <div *ngIf="note?.errors?.['maxlength']">
+                {{ 'projects.hourpricelengthmax' | translate}}
+              </div>
             </div>
           </div>
         </div>
 
         <div class="d-flex flex-row">
           <div class="p-2 col-md-2">
-            <input id="ProjectPrice" type="number" formControlName="ProjectPrice" class="form-control" placeholder="{{ 'projects.projectprice' | translate}}">
+            <input id="ProjectPrice" type="text" formControlName="ProjectPrice" class="form-control" placeholder="{{ 'projects.projectprice' | translate}}">
             <div *ngIf="projectPrice?.invalid && (projectPrice?.dirty || projectPrice?.touched)" class="alert alert-danger">
               <div *ngIf="projectPrice?.errors">
                 {{ 'projects.projectprice' | translate}} {{ 'shared.required' | translate}}
+              </div>
+              <div *ngIf="projectPrice?.errors?.['pattern']">
+                {{ 'users.onlynumbers' | translate}}
+              </div>
+              <div *ngIf="note?.errors?.['maxlength']">
+                {{ 'projects.projectpricelengthmax' | translate}}
               </div>
             </div>
           </div>
@@ -80,6 +113,12 @@
             <div *ngIf="hoursSpend?.invalid && (hoursSpend?.dirty || hoursSpend?.touched)" class="alert alert-danger">
               <div *ngIf="hoursSpend?.errors">
                 {{ 'projects.hoursspend' | translate}} {{ 'shared.required' | translate}}
+              </div>
+              <div *ngIf="hoursSpend?.errors?.['pattern']">
+                {{ 'users.onlynumbers' | translate}}
+              </div>
+              <div *ngIf="note?.errors?.['maxlength']">
+                {{ 'projects.hoursspendlengthmax' | translate}}
               </div>
             </div>
           </div>

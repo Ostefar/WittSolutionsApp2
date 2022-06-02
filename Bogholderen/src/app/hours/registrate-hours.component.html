@@ -18,8 +18,17 @@
         <div class="p-2 col-md-2">
           <input id="HoursToRegistrate" type="text" formControlName="HoursToRegistrate" class="form-control" placeholder="{{ 'hours.hourstoregistrate' | translate}}">
           <div *ngIf="hoursToRegistrate?.invalid && (hoursToRegistrate?.dirty || hoursToRegistrate?.touched)" class="alert alert-danger">
-            <div *ngIf="hoursToRegistrate?.errors">
+            <div *ngIf="hoursToRegistrate?.errors?.['required']">
               {{ 'hours.hourstoregistrate' | translate}} {{ 'shared.required' | translate}}
+            </div>
+            <div *ngIf="hoursToRegistrate?.errors?.['minlength']">
+              {{ 'hours.registrationlength' | translate}}
+            </div>
+            <div *ngIf="hoursToRegistrate?.errors?.['maxlength']">
+              {{ 'hours.registrationlengthmax' | translate}}
+            </div>
+            <div *ngIf="hoursToRegistrate?.errors?.['pattern']">
+              {{ 'users.onlynumbers' | translate}}
             </div>
           </div>
         </div>
@@ -40,8 +49,14 @@
           <textarea id="Note" type="text" formControlName="Note" class="form-control" rows="4" cols="50" placeholder="{{ 'projects.note' | translate}}">
           </textarea>
           <div *ngIf="note?.invalid && (note?.dirty || note?.touched)" class="alert alert-danger">
-            <div *ngIf="note?.errors">
+            <div *ngIf="note?.errors?.['required']">
               {{ 'projects.note' | translate}} {{ 'shared.required' | translate}}
+            </div>
+            <div *ngIf="note?.errors?.['minlength']">
+              {{ 'hours.notelength' | translate}}
+            </div>
+            <div *ngIf="note?.errors?.['maxlength']">
+              {{ 'hours.notelengthmax' | translate}}
             </div>
           </div>
         </div>

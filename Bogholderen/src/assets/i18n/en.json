@@ -4,7 +4,15 @@
     "addressline2": "Address line 2",
     "city": "City",
     "country": "Country",
-    "zipcode": "Zip code"
+    "zipcode": "Zip code",
+    "zipcodelength": "Zipcode must minimum be 4 numbers",
+    "zipcodelengthmax": "Zipcode can maximum be 4 numbers",
+    "citylength": "City must minimum be 2 letters",
+    "citylengthmax": "City can maximum be 40 letters",
+    "countrylength": "Country must minimum be 2 letters",
+    "countrylengthmax": "Country can maximum be 40 letters",
+    "addresslinelength": "Address line must minimum be 5 letters",
+    "addresslinelengthmax": "Address line can maximum be 65 letters"
   },
   "customers": {
     "companyname": "Company name",
@@ -48,7 +56,13 @@
     "projectname": "Project name",
     "projectprice": "Project price",
     "startdate": "Start date",
-    "title": "Projects"
+    "title": "Projects",
+    "projectnamelength": "Project name must be 2 letters minimum",
+    "projectnamelengthmax": "Project name can maximum consist of 45 letters",
+    "estimatedhourslengthmax": "Project name can maximum consist of 4 numbers",
+    "hourpricelengthmax": "Project name can maximum consist of 4 numbers",
+    "projectpricelengthmax": "Project name can maximum consist of 8 numbers",
+    "hoursspendlengthmax": "Project name can maximum consist of 4 numbers"
   },
   "shared": {
     "required": "is required",
@@ -57,7 +71,8 @@
     "delete": "Delete",
     "add": "Add new",
     "english": "English",
-    "danish": "Danish"
+    "danish": "Danish",
+    "emailformat": "Must be in email format ex. 'name@address.com'"
   },
   "success": {
     "customercreated": "Customer created",
@@ -85,7 +100,15 @@
     "password": "Password",
     "phone": "Phone",
     "title": "Users",
-    "username": "Username"
+    "username": "Username",
+    "fistnamelength": "Firstname must be at least 2 letters",
+    "fistnamelengthmax": "Firstname cannot exceed 50 letters",
+    "lastnamelength": "Lastname must be at least 2 letters",
+    "lastnamelengthmax": "Lastname cannot exceed 50 letters",
+    "nonumbers": "Can only accept letters",
+    "phonelength": "Phone must be 8 numbers minimum",
+    "phonelengthmax": "Phone can maximum consist of 8 numbers",
+    "onlynumbers": "Can only consist of numbers"
   },
   "hours": {
     "totalhours": "Total hours registrated",
@@ -95,7 +118,11 @@
     "registrationdate": "Registration date",
     "pricefornow": "Price to date",
     "toggleregistration": "Show/hide new registration",
-    "registrate": "Registrate hours"
+    "registrate": "Registrate hours",
+    "registrationlength": "Registration must be 1 number minimum",
+    "registrationlengthmax": "Registration can maximum consist of 2 numbers",
+    "notelength": "Registration must be minimum 4 characters",
+    "notelengthmax": "Registration can maximum consist of 150 characters"
 
   }
 }

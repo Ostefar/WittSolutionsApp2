@@ -31,9 +31,9 @@ export class UpdateHoursComponent implements OnInit
   private updateForm() { 
     this.updateHoursForm = this.fb.group({
       Id: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]),
-      HoursToRegistrate: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
+      HoursToRegistrate: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(1), Validators.maxLength(2)]),
       RegistrationDate: new FormControl('', [Validators.required]),
-      Note: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(150)]),
+      Note: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(150)]),
       ProjectId: new FormControl(''),
       CustomerId: new FormControl(''),
       EmployeeId: new FormControl(''),

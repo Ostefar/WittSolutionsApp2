@@ -154,6 +154,15 @@ namespace WittSolutionsApp2.Controllers
         public void DeleteProject(int id)
         {
             var project = _dbContext.Projects.Where(x => x.Id == id).FirstOrDefault();
+            var hoursList = _dbContext.Hours.Where(x => x.ProjectId == id).ToList();
+
+            
+
+            if (hoursList != null) { 
+                foreach (var hour in hoursList) { 
+                _dbContext.Hours.Remove(hour);
+                }
+            }
 
             _dbContext.Projects.Remove(project);
             _dbContext.SaveChanges();

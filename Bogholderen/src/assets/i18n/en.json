@@ -52,7 +52,12 @@
   },
   "shared": {
     "required": "is required",
-    "download":  "Download as excel file"
+    "download": "Download as excel file",
+    "update": "Update",
+    "delete": "Delete",
+    "add": "Add new",
+    "english": "English",
+    "danish": "Danish"
   },
   "success": {
     "customercreated": "Customer created",
@@ -89,7 +94,8 @@
     "hourstoregistrate": "Hours to registrate",
     "registrationdate": "Registration date",
     "pricefornow": "Price to date",
-    "toggleregistration": "Show/hide new registration"
+    "toggleregistration": "Show/hide new registration",
+    "registrate": "Registrate hours"
 
   }
 }

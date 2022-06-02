@@ -52,7 +52,12 @@
   },
   "shared": {
     "required": "skal udfyldes",
-    "download": "Download som excel fil"
+    "download": "Download som excel fil",
+    "update": "Opdatér",
+    "delete": "Slet",
+    "add": "Tilføj ny",
+    "english": "Engelsk",
+    "danish":  "Dansk"
   },
   "success": {
     "customercreated": "Kunde oprettet",
@@ -89,7 +94,9 @@
     "hourstoregistrate": "Timer at registrere",
     "registrationdate": "Registrerings dato",
     "pricefornow": "Pris til dato",
-    "toggleregistration": "Vis/gem nye registreringer"
+    "toggleregistration": "Vis/gem nye registreringer",
+    "registrate": "Registrér timer"
+
 
   }
 }

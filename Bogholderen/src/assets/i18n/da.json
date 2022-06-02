@@ -51,7 +51,8 @@
     "title": "Projekter"
   },
   "shared": {
-    "required": "skal udfyldes"
+    "required": "skal udfyldes",
+    "download": "Download som excel fil"
   },
   "success": {
     "customercreated": "Kunde oprettet",
@@ -87,7 +88,8 @@
     "remaininghours": "Timer tilbage",
     "hourstoregistrate": "Timer at registrere",
     "registrationdate": "Registrerings dato",
-    "pricefornow":  "Pris til dato"
+    "pricefornow": "Pris til dato",
+    "toggleregistration": "Vis/gem nye registreringer"
 
   }
 }

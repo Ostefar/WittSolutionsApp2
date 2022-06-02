@@ -6,9 +6,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from '../service/notification-service';
 import { Hours } from '../hours/Hours';
+import { Price } from '../hours/Price';
 import { HoursService } from '../service/hours.service';
 import { Project } from '../projects/Project';
 import { ProjectService } from '../service/project.service';
+import { ExcelService } from '../service/excel.service';
+import { Observable } from 'rxjs';
 
 @Component({
 
@@ -18,17 +21,21 @@ import { ProjectService } from '../service/project.service';
 })
 export class RegistrateHoursComponent implements OnInit
 {
-  // lav en total hours registered og en expected hours og en hours left column
   registrateHoursForm!: FormGroup;
   id!: number;
   project!: Project;
   hours: Hours[] = [];
+  hoursPricing: Price[] = [];
   toggleRegistration = true;
   testInt = 2;
   hoursTotal!: number;
   hoursEst!: number;
   hourPrice!: number;
   projectPrice!: number;
+  projectName!: string;
+  CompanyName!: string;
+  excel = [];
+
 
 todaysDate = new Date();
   dd = String(this.todaysDate.getDate()).padStart(2, '0');
@@ -37,9 +44,18 @@ todaysDate = new Date();
 
 today = this.yyyy + '-' + this.mm + '-' + this.dd;
  
-  constructor(public fb: FormBuilder, private hoursService: HoursService, private projectService: ProjectService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
-   
+  constructor(public fb: FormBuilder, private hoursService: HoursService, private projectService: ProjectService, private excelService: ExcelService, private http: HttpClient, private notifyService: NotificationService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
+
   }
+
+  exportHoursExcel(): void {
+    this.excelService.exportAsExcelFile(this.hours, this.projectName + "_");
+  }
+
+  exportPriceExcel(): void {
+    this.excelService.exportAsExcelFile(this.hoursPricing, this.projectName + "_");
+  }
+
 
   private registrationForm() { 
     this.registrateHoursForm = this.fb.group({
@@ -51,7 +67,7 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
   });
   }
 
-
+ 
   ngOnInit(): void {
     this.today
     this.setDateAndId();
@@ -96,6 +112,7 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
         this.hoursEst = this.project.estimatedHours
         this.hourPrice = this.project.hourPrice
         this.projectPrice = this.project.projectPrice
+        this.projectName = this.project.projectName
 
     this.registrateHoursForm.setValue({
       HoursToRegistrate: "",

@@ -51,7 +51,8 @@
     "title": "Projects"
   },
   "shared": {
-    "required": "is required"
+    "required": "is required",
+    "download":  "Download as excel file"
   },
   "success": {
     "customercreated": "Customer created",
@@ -87,7 +88,8 @@
     "remaininghours": "Hours left",
     "hourstoregistrate": "Hours to registrate",
     "registrationdate": "Registration date",
-    "pricefornow":  "Price to date"
+    "pricefornow": "Price to date",
+    "toggleregistration": "Show/hide new registration"
 
   }
 }

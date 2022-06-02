@@ -17,8 +17,7 @@ export class HoursService {
   constructor(private http: HttpClient) { }
 
   create(payload: Hours) {
-    return this.http.post<Hours>(this.APIUrl + '/RegistrateHours', payload
-    );
+    return this.http.post<Hours>(this.APIUrl + '/RegistrateHours', payload);
   }
   getAll(id: number): Observable<any> {
     return this.http.get(this.APIUrl + '/ViewHours' + id)
@@ -35,4 +34,8 @@ export class HoursService {
   update(id: number, payload: Hours) {
     return this.http.put<Hours>(this.APIUrl + '/UpdateHours' + id, payload);
   }
+  getExcel(payload: Hours) {
+    return this.http.post<Hours>(this.APIUrl + '/Excel', payload);
+  }
+ 
 }

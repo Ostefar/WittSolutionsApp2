@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
+  // class borrowed from ngx-toastr documentation https://www.npmjs.com/package/ngx-toastr
 export class NotificationService {
 
   constructor(private toastr: ToastrService) { }

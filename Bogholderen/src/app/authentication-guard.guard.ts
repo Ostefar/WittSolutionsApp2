@@ -6,6 +6,7 @@ import { LoginService } from './service/login-service';
 @Injectable({
   providedIn: 'root'
 })
+  // class borrowed from documentation about authenticationguard. I cannot find the link again
 export class AuthenticationGuardGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(private loginService: LoginService, private router: Router) {

@@ -43,6 +43,8 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationGuardGuard } from './authentication-guard.guard';
 
 
 
@@ -66,6 +68,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     ManagementOverviewComponent,
     RegistrateHoursComponent,
     UpdateHoursComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -89,22 +92,23 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     NbTabsetModule,
     DropDownListModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'users-overview', component: UsersOverviewComponent },
-      { path: 'add-users', component: AddUsersComponent },
-      { path: 'update-users/:id', component: UpdateUsersComponent },
-      { path: 'employees-overview', component: EmployeesOverviewComponent },
-      { path: 'add-employees', component: AddEmployeesComponent },
-      { path: 'update-employees/:id', component: UpdateEmployeesComponent },
-      { path: 'customers-overview', component: CustomersOverviewComponent },
-      { path: 'add-customers', component: AddCustomersComponent },
-      { path: 'update-customers/:id', component: UpdateCustomersComponent },
-      { path: 'projects-overview', component: ProjectsOverviewComponent },
-      { path: 'add-projects', component: AddProjectsComponent },
-      { path: 'update-projects/:id', component: UpdateProjectsComponent },
-      { path: 'management-overview', component: ManagementOverviewComponent },
-      { path: 'registrate-hours/:id', component: RegistrateHoursComponent },
-      { path: 'update-hours/:id', component: UpdateHoursComponent },
+      { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthenticationGuardGuard] },
+      { path: 'login', component: LoginComponent },
+      { path: 'users-overview', component: UsersOverviewComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'add-users', component: AddUsersComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'update-users/:id', component: UpdateUsersComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'employees-overview', component: EmployeesOverviewComponent, canActivate: [AuthenticationGuardGuard] },
+      { path: 'add-employees', component: AddEmployeesComponent, canActivate: [AuthenticationGuardGuard] },
+      { path: 'update-employees/:id', component: UpdateEmployeesComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'customers-overview', component: CustomersOverviewComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'add-customers', component: AddCustomersComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'update-customers/:id', component: UpdateCustomersComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'projects-overview', component: ProjectsOverviewComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'add-projects', component: AddProjectsComponent, canActivate: [AuthenticationGuardGuard] },
+      { path: 'update-projects/:id', component: UpdateProjectsComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'management-overview', component: ManagementOverviewComponent, canActivate: [AuthenticationGuardGuard] },
+      { path: 'registrate-hours/:id', component: RegistrateHoursComponent, canActivate: [AuthenticationGuardGuard]},
+      { path: 'update-hours/:id', component: UpdateHoursComponent, canActivate: [AuthenticationGuardGuard] },
 
     ]),
     MdbAccordionModule,

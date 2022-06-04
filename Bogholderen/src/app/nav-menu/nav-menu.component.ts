@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { LoginService } from '../service/login-service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -11,7 +13,7 @@ export class NavMenuComponent {
 
 
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private loginService: LoginService, private router: Router) {
   }
 
   collapse() {
@@ -24,5 +26,10 @@ export class NavMenuComponent {
 
   useLanguage(language: string): void {
     this.translate.use(language);
+  }
+
+  logOut(): void {
+    this.loginService.logOut();
+    this.router.navigateByUrl("/login");
   }
 }

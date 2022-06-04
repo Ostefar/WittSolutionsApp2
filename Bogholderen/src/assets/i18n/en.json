@@ -37,7 +37,8 @@
   },
   "error": {
     "error": "Error",
-    "errormessage": "Something went wrong, try again"
+    "errormessage": "Something went wrong, try again",
+    "wrongcredentials": "Credentials doesnt match, please try again"
   },
   "home": {
     "title": "Home"
@@ -72,7 +73,8 @@
     "add": "Add new",
     "english": "English",
     "danish": "Danish",
-    "emailformat": "Must be in email format ex. 'name@address.com'"
+    "emailformat": "Must be in email format ex. 'name@address.com'",
+    "logout":  "Log out"
   },
   "success": {
     "customercreated": "Customer created",
@@ -88,7 +90,8 @@
     "usercreated": "New user created",
     "userdeleted": "User deleted",
     "userupdated": "User updated",
-    "hoursregistrated": "Hours registrated"
+    "hoursregistrated": "Hours registrated",
+    "loggedin":  "Logging in"
   },
   "users": {
     "address": "Address",

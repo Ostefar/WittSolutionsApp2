@@ -40,6 +40,7 @@
     <None Remove="Bogholderen\src\app\service\employee.service.ts" />
     <None Remove="Bogholderen\src\app\service\excel.service.ts" />
     <None Remove="Bogholderen\src\app\service\hours.service.ts" />
+    <None Remove="Bogholderen\src\app\service\login-service.ts" />
     <None Remove="Bogholderen\src\app\service\management.service.ts" />
     <None Remove="Bogholderen\src\app\service\notification-service.ts" />
     <None Remove="Bogholderen\src\app\service\project.service.ts" />
@@ -57,6 +58,7 @@
     <TypeScriptCompile Include="Bogholderen\src\app\hours\Price.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\hours\Hours.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\projects\Project.ts" />
+    <TypeScriptCompile Include="Bogholderen\src\app\service\login-service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\excel.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\management.service.ts" />
     <TypeScriptCompile Include="Bogholderen\src\app\service\hours.service.ts" />

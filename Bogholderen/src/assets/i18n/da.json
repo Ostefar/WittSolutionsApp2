@@ -37,7 +37,8 @@
   },
   "error": {
     "error": "Fejl",
-    "errormessage": "Der gik noget galt, prøv igen"
+    "errormessage": "Der gik noget galt, prøv igen",
+    "wrongcredentials":  "Oplysningerne er forkerte, prøv igen"
   },
   "home": {
     "title": "Hjem"
@@ -72,7 +73,8 @@
     "add": "Tilføj ny",
     "english": "Engelsk",
     "danish": "Dansk",
-    "emailformat":  "Skal være i email format fx. 'navn@adresse.dk'"
+    "emailformat": "Skal være i email format fx. 'navn@adresse.dk'",
+    "logout": "Log ud"
   },
   "success": {
     "customercreated": "Kunde oprettet",
@@ -88,7 +90,8 @@
     "usercreated": "Ny bruger oprettet",
     "userdeleted": "Bruger slettet",
     "userupdated": "Bruger opdateret",
-    "hoursregistrated": "Timer registreret"
+    "hoursregistrated": "Timer registreret",
+    "loggedin":  "Logger ind"
   },
   "users": {
     "address": "Adresse",

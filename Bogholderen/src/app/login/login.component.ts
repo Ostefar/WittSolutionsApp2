@@ -57,7 +57,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token", "" + userId);
           this.showToasterSuccess();
           this.navigateToProfile();
-          console.log("this user exist")
         } else {
           this.showToasterError();
           this.reload();

@@ -1,1 +1,31 @@
-<p>profile</p>
+<h1>{{ 'profile.greeting' | translate }} {{ firstname }} {{ lastname }}</h1>
+
+
+<br><br>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>{{ 'users.username' | translate}}</th>
+      <th>{{ 'users.phone' | translate}}</th>
+      <th>{{ 'users.email' | translate}}</th>
+      <th>{{ 'address.addressline1' | translate}}</th>
+      <th>{{ 'address.country' | translate}}</th>
+      <th>{{ 'address.city' | translate}}</th>
+      <th>{{ 'address.zipcode' | translate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{username}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+      <td>{{addressline1}}</td>
+      <td>{{country}}</td>
+      <td>{{city}}</td>
+      <td>{{zipcode}}</td>
+    </tr>
+  </tbody>
+</table>
+

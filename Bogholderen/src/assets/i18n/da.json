@@ -38,7 +38,7 @@
   "error": {
     "error": "Fejl",
     "errormessage": "Der gik noget galt, prøv igen",
-    "wrongcredentials":  "Oplysningerne er forkerte, prøv igen"
+    "wrongcredentials": "Oplysningerne er forkerte, prøv igen"
   },
   "home": {
     "title": "Hjem"
@@ -91,7 +91,7 @@
     "userdeleted": "Bruger slettet",
     "userupdated": "Bruger opdateret",
     "hoursregistrated": "Timer registreret",
-    "loggedin":  "Logger ind"
+    "loggedin": "Logger ind"
   },
   "users": {
     "address": "Adresse",
@@ -126,7 +126,8 @@
     "registrationlengthmax": "Time registrering kan maximum være 2 tal",
     "notelength": "Noté registrering skal minimum være 4 karakterer",
     "notelengthmax": "Noté registrering kan maximum være 150 karakterer"
-
-
+  },
+  "profile": {
+    "greeting": "Velkommen tilbage,"
   }
 }

@@ -74,7 +74,7 @@
     "english": "English",
     "danish": "Danish",
     "emailformat": "Must be in email format ex. 'name@address.com'",
-    "logout":  "Log out"
+    "logout": "Log out"
   },
   "success": {
     "customercreated": "Customer created",
@@ -91,7 +91,7 @@
     "userdeleted": "User deleted",
     "userupdated": "User updated",
     "hoursregistrated": "Hours registrated",
-    "loggedin":  "Logging in"
+    "loggedin": "Logging in"
   },
   "users": {
     "address": "Address",
@@ -127,5 +127,8 @@
     "notelength": "Registration must be minimum 4 characters",
     "notelengthmax": "Registration can maximum consist of 150 characters"
 
+  },
+  "profile": {
+    "greeting": "Welcome back,"
   }
-}
+  }

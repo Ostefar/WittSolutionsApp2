@@ -45,6 +45,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationGuardGuard } from './authentication-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -69,6 +70,7 @@ import { AuthenticationGuardGuard } from './authentication-guard.guard';
     RegistrateHoursComponent,
     UpdateHoursComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -94,6 +96,7 @@ import { AuthenticationGuardGuard } from './authentication-guard.guard';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthenticationGuardGuard] },
       { path: 'login', component: LoginComponent },
+      { path: 'profile', component: ProfileComponent, canActivate: [AuthenticationGuardGuard] },
       { path: 'users-overview', component: UsersOverviewComponent, canActivate: [AuthenticationGuardGuard]},
       { path: 'add-users', component: AddUsersComponent, canActivate: [AuthenticationGuardGuard]},
       { path: 'update-users/:id', component: UpdateUsersComponent, canActivate: [AuthenticationGuardGuard]},
@@ -111,21 +114,6 @@ import { AuthenticationGuardGuard } from './authentication-guard.guard';
       { path: 'update-hours/:id', component: UpdateHoursComponent, canActivate: [AuthenticationGuardGuard] },
 
     ]),
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCheckboxModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbFormsModule,
-    MdbModalModule,
-    MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
-    MdbValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

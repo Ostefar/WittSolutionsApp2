@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.GetAllUsers();
     this.UserLoginForm();
+    console.log(this.users)
 
   }
 
@@ -49,49 +51,28 @@ export class LoginComponent implements OnInit {
       if (this.loginForm.valid) {
         this.formusername = this.loginForm.get('UserName')?.value;
         this.formpassword = this.loginForm.get('Password')?.value;
-        debugger
-        this.loginService.login(this.formusername, this.formpassword)
-          .pipe(first())
-          .subscribe(
-            data => {
-              if (localStorage.getItem("token") != null) {
-                this.showToasterSuccess();
-                this.navigateHome();
-              } else {
-                this.showToasterError();
-              }
-            },
-            error => {
-              this.showToasterError();
-              this.reload();
 
-        });
-      
+        if (this.users.find(x => x.userName === this.formusername && x.password === this.formpassword)) {
+          var userId = this.users.find(x => x.userName === this.formusername)?.id;
+          localStorage.setItem("token", "" + userId);
+          this.showToasterSuccess();
+          this.navigateToProfile();
+          console.log("this user exist")
+        } else {
+          this.showToasterError();
+          this.reload();
+        }
       }
     }
   }
-
-   /* if (this.loginForm.valid) {
-      this.formusername = this.loginForm.get('UserName')?.value;
-      this.formpassword = this.loginForm.get('Password')?.value;
-      this.loginService.login(this.formusername, this.formpassword).subscribe((data) => {
-        this.showToasterSuccess();
-        this.navigateHome()
-        console.log('Form submitted successfully');
-      },
-        (error: HttpErrorResponse) => {
-          this.showToasterError();
-          this.reload();
-          console.log(error);
-        });
-    }*/
   
-reload() {
+  reload() {
+  setTimeout(() => { this.router.navigateByUrl('/'); }, 1900);
   setTimeout(() => { this.router.navigateByUrl('/login'); }, 2000);
 }
 
-navigateHome() {
-  setTimeout(() => { this.router.navigateByUrl('/'); }, 2000);
+navigateToProfile() {
+  setTimeout(() => { this.router.navigateByUrl('/profile'); }, 2000); 
 }
 
 

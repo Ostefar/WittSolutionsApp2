@@ -9,11 +9,8 @@ import { User } from "../users/User";
   providedIn: 'root'
 })
 export class UserService {
-  // Api url for localhost
+  // Api url 
   readonly APIUrl = "user";
-  //api url for azure hosting
-  //private readonly APIUrl = "https://wittsolutionsapp2.azurewebsites.net/api/user";
-
 
   constructor(private http: HttpClient) { }
 
@@ -22,14 +19,12 @@ export class UserService {
   }
 
   create(payload: User) {
-    return this.http.post<User>(this.APIUrl + '/CreateUsers', payload
-    );
+    return this.http.post<User>(this.APIUrl + '/CreateUsers', payload);
   }
 
   delete(id: number) {
     return this.http.delete(this.APIUrl + '/DeleteUser' + id)
   }
-
 
   getById(id: number): Observable<any> {
     return this.http.get<User>(this.APIUrl + '/GetUserBy' + id)

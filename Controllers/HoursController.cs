@@ -51,7 +51,7 @@ namespace WittSolutionsApp2.Controllers
         [Route("ViewHours{id}")]
         public async Task<IActionResult> GetAll(int id)
         {
-            // skal kun loade timer fra et project
+            // == id - så den kun loader timer fra et specifikt projekt
             var result = (from hours in _dbContext.Hours where hours.ProjectId == id
                           join project in _dbContext.Projects on hours.ProjectId equals project.Id
                           join customer in _dbContext.Customers on hours.CustomerId equals customer.Id

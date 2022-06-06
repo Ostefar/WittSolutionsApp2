@@ -12,6 +12,4 @@ export interface User {
   city: string;
   zipCode: string;
 
-
-
 }

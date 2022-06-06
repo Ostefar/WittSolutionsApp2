@@ -79,14 +79,6 @@ export class AddUsersComponent implements OnInit
     this.notifyService.showError(this.translate.instant("error.errormessage"), this.translate.instant("error.error"))
   }
 
-  /*showToasterInfo() {
-    this.notifyService.showInfo("This is info", "New user")
-  }
-
-  showToasterWarning() {
-    this.notifyService.showWarning("This is warning", "New user")
-  }*/
-
   get firstName() { return this.addUserForm.get("FirstName"); }
 
   get lastName() { return this.addUserForm.get("LastName"); }

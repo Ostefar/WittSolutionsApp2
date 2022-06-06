@@ -97,6 +97,7 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
     }
     this.reload();
   }
+
   ToggleRegistration() {
     if (this.toggleRegistration == true) {
       this.toggleRegistration = false

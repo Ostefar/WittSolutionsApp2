@@ -116,10 +116,11 @@ namespace WittSolutionsApp2.Controllers
         {
             var user = _dbContext.Users.Where(x => x.Id == id).FirstOrDefault();
             var addressId = user.AddressId;
-            
+            var address = _dbContext.Address.Where(x => x.Id == addressId).FirstOrDefault();
 
-            _dbContext.Users.Remove(_dbContext.Users.FirstOrDefault(x => x.Id == id));
-            _dbContext.Address.Remove(_dbContext.Address.FirstOrDefault(x => x.Id == addressId));
+
+            _dbContext.Users.Remove(user);
+            _dbContext.Address.Remove(address);
             _dbContext.SaveChanges();
             
         }
@@ -134,7 +135,6 @@ namespace WittSolutionsApp2.Controllers
             .SingleOrDefault();
 
             var addressId = user.AddressId;
-
             var address = _dbContext.Address.Where(x => x.Id == addressId).SingleOrDefault();
 
             if (payload is not null)
@@ -148,7 +148,6 @@ namespace WittSolutionsApp2.Controllers
                     City = payload.City,
                     ZipCode = payload.ZipCode
                 };
-
                 User userData = new User()
                 {
                     Id = payload.Id,

@@ -59,6 +59,7 @@ namespace WittSolutionsApp2.Controllers
 
             return Ok(result);
         }
+
         [HttpGet]
         [Route("GetAllProjectNames")]
         public async Task<IActionResult> GetAllProjectNames()

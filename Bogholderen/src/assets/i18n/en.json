@@ -91,7 +91,8 @@
     "userdeleted": "User deleted",
     "userupdated": "User updated",
     "hoursregistrated": "Hours registrated",
-    "loggedin": "Logging in"
+    "loggedin": "Logging in",
+    "hoursdeleted": "Hours deleted"
   },
   "users": {
     "address": "Address",

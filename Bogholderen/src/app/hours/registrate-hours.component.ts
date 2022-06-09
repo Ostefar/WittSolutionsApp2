@@ -150,6 +150,10 @@ today = this.yyyy + '-' + this.mm + '-' + this.dd;
     this.notifyService.showSuccess(this.translate.instant("success.hoursregistrated"), this.translate.instant("success.success"))
   }
 
+  showToasterSuccessOnDelete() {
+    this.notifyService.showSuccess(this.translate.instant("success.hoursdeleted"), this.translate.instant("success.success"))
+  }
+
   showToasterError() {
     this.notifyService.showError(this.translate.instant("error.errormessage"), this.translate.instant("error.error"))
   }

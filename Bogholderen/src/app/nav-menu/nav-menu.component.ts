@@ -39,7 +39,7 @@ export class NavMenuComponent implements OnInit {
     this.loginService.logOut();
     this.router.navigateByUrl("/login");
   }
-  toggleLogOutBtn() { 
+  toggleLogOutBtn() {
     if (localStorage.getItem("token") != null) {
       this.isLoggedIn = true;
     } else {
